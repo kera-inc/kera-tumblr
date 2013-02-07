@@ -1,0 +1,1 @@
+This is the Kera Tumblr Theme.
