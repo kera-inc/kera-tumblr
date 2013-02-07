@@ -83,7 +83,6 @@
       });
     </script>
 
-
     <style type="text/css">
 
       /*/////////////////////////////////////////////////////////////
@@ -1073,32 +1072,28 @@
             color: #666666;      
             }
 
-          ol#posts li ul.tags {
+          ol#posts li .post-data ul.tags {
             display:block;
             height: 20px;
-            width: 300px;
+            width: 400px;
             margin: 0 auto;
+            text-align: center;
           }
-            ol#posts li ul.tags li {
-              float: left;
+            ol#posts li .post-data ul.tags li {
+              display: inline;
               padding-right: 5px;
             }
-            ol#posts li ul.tags li:after {
+            ol#posts li .post-data ul.tags li:after {
               content: ", ";
             }
-            ol#posts li ul.tags li:last-child {
-              
-            }       
-            ol#posts li ul.tags li:last-child:after {
+            ol#posts li .post-data ul.tags li:last-child:after {
               content: "";
             }
-            ol#postst li .post-content .tags ul a {
-            text-align:center;
+            ol#postst li .post-data ul.tags li a {
             list-style-type: none;
-            margin: 30px 125px 0 118px;
-            font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            font: normal normal 14px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
             color: #666666;
-            border: 1px solid red;
+            text-transform: uppercase;
             }        
 
           ol#posts li .post-data p {
@@ -1351,7 +1346,19 @@
               </div>
 
                 <div class="post-data">
+
+                  {block:HasTags}
+                  <ul class="tags">
+                    {block:Tags}
+                    <li>
+                      <a href="{TagURL}">{Tag}</a>
+                    </li>
+                    {/block:Tags}
+                  </ul>
+                  {/block:HasTags}
+
                   <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                
                 </div>
 
                 <div class="post-sharing">
