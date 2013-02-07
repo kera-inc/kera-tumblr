@@ -11,6 +11,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
   
     <meta name="google-site-verification" content="zEoSqIxL4v68atpFixOofV35PPOH_ifKmuV8iTvq4KU" />
+
+    <meta http-equiv="x-dns-prefetch-control" content="off"/>
     
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
     
@@ -24,8 +26,6 @@
     <![endif]-->
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-
 
     <script type="text/javascript">
     $(function() {
@@ -86,7 +86,9 @@
 
     <style type="text/css">
 
-      /*///////////////////////////////////////// css reset /////////////////////////////////////////*/
+      /*/////////////////////////////////////////////////////////////
+          Reset
+      /////////////////////////////////////////////////////////////*/
       
       html, body, div, span, applet, object, iframe,
       h1, h2, h3, h4, h5, h6, blockquote, pre,
@@ -115,10 +117,13 @@
         quotes: none; }
       
       /* removes fuzzy blue outline for :focus in webkit */
+
       *:focus {
         outline: none; }
           
-      /*///////////////////////////////////////////////// global styles ///////////////////////////////////////////////*/
+      /*/////////////////////////////////////////////////////////////
+          Global Styles
+      /////////////////////////////////////////////////////////////*/
       
       * {
       }
@@ -126,20 +131,20 @@
       a {
         text-decoration: none;
       }
-        
 
-      /*///////////// Kera Marketing ////////*/
+      /*/////////////////////////////////////////////////////////////
+          Normalise
+      /////////////////////////////////////////////////////////////*/
 
       /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
 
       /* ==========================================================================
-         HTML5 display definitions
-         ========================================================================== */
+          HTML5 display definitions
+          ========================================================================== */
 
       /**
        * Correct `block` display not defined in IE 8/9.
        */
-
 
       article,
       aside,
@@ -508,9 +513,13 @@
 
       /*! END normalize.css v2.0.1 | MIT License | git.io/normalize */
 
-
-      /* Typography */
-
+      /*/////////////////////////////////////////////////////////////
+          Kera Styles
+      /////////////////////////////////////////////////////////////*/
+      
+      /* ============================================================
+         Typography
+      ============================================================ */
 
       a {
         color: #2284c3;
@@ -566,8 +575,9 @@
         font-style:normal;
       }
 
-
-      /* Structure */
+      /* ============================================================
+         Structure
+      ============================================================ */
 
       body {
         font: light normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
@@ -589,10 +599,26 @@
         display: none;
       }
 
+      .btn { 
+        display:block;
+        line-height:50px;
+        text-transform:uppercase;
+        text-align:center;
+        text-decoration:none;
+        color:#FFF;
+        background-color:#2284c3;
+        background-image:url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png);
+      }
+      .btn.btn_primary  {
+        background-color:#0b9b4b;
+      }
+      .btn:hover{
+        background-image:url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png);
+      }
 
-      .btn{display:block;line-height:50px;text-transform:uppercase;text-align:center;text-decoration:none;color:#FFF;background-color:#2284c3;background-image:url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png);}
-      .btn.btn_primary{background-color:#0b9b4b;}
-      .btn:hover{background-image:url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png);}
+      /* ============================================================
+         Header
+      ============================================================ */
 
       .marketing_header {
         background: #fff;*zoom:1;
@@ -674,6 +700,9 @@
         opacity: 0.75;
       }
 
+      /* ============================================================
+         Social
+      ============================================================ */
 
       .marketing_social {
         border-top: solid 1px #dddddd;
@@ -741,7 +770,9 @@
         background: url(https://www.kera.io/assets/marketing2/twitter-bd2ca0f9c4ef6833a88bf6454b474508.png) no-repeat 25px 50%;
       }
 
-
+      /* ============================================================
+         Footer
+      ============================================================ */
 
       .marketing_footer {
         padding: 25px 0 25px 0;
@@ -807,6 +838,10 @@
       }
 
       /* Opa Blogging Style */
+
+      /* ============================================================
+         Sidebar
+      ============================================================ */
 
       #blog_sidebar {
         width: 274px;
@@ -912,6 +947,25 @@
                 background-position: -92px -280px;
             }      
 
+        #banner {
+          display: block;
+          width: 234px;
+          height: 350px;
+          top: 82px;
+          right: 19px;
+          padding: 20px;
+          border-right: 1px solid #ddd;
+          border-bottom: 1px solid #ddd;
+          background: #FFF url(http://kera.io/assets/KERA-blog_banner.png) no-repeat 100% 100%;
+          font-size: 30px
+        }
+          #banner p {
+            font-size: 22px
+          }
+
+      /* ============================================================
+         Posts : General
+      ============================================================ */
 
       ol#posts {
           background: none;
@@ -922,159 +976,139 @@
           margin-left: 0px;
       }
 
-      ol#posts li.post {
-        background:#fff;
-        width: 674px;
-        padding: 62px 0px 40px 0px;
-        margin: 0px 0px 50px 0px;
-        border: 1px solid #ddd;
-      }
-      ol#posts li .post-content img,
-      ol#posts li .post-content .video-wrapper,
-      ol#posts li .post-content .album {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-        vertical-align: bottom;
-      }
-        ol#posts li .post-content p {
-          margin: 30px 75px 0 75px;
-          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-          color: #666666;
-        }  
-          ol#posts li .post-content h1 {
-            font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-            font-size: 33px;
-            font-weight: lighter;
-            text-align: center;
-            line-height: 40px;
-            margin: 0px 100px;
-          }
-            ol#posts li .post-content h1 a {
+        ol#posts li.post {
+          background:#fff;
+          width: 674px;
+          padding: 62px 0px 40px 0px;
+          margin: 0px 0px 50px 0px;
+          border: 1px solid #ddd;
+        }
+        ol#posts li .post-content img,
+        ol#posts li .post-content .video-wrapper,
+        ol#posts li .post-content .album {
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+          vertical-align: bottom;
+        }
+          ol#posts li .post-content p {
+            margin: 30px 75px 0 75px;
+            font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            color: #666666;
+          }  
+            ol#posts li .post-content h1 {
+              font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+              font-size: 33px;
+              font-weight: lighter;
+              text-align: center;
+              line-height: 40px;
+              margin: 0px 100px;
+            }
+              ol#posts li .post-content h1 a {
+                color: #2694D0;
+              }
+              ol#posts li .post-content h1 a:hover {
+                color: #F05247;
+              }
+            ol#posts li .post-content p strong {
+              font: 19px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+              font-weight: bold;
+            }
+            ol#posts li .post-content p a {
               color: #2694D0;
             }
-            ol#posts li .post-content h1 a:hover {
+            ol#posts li .post-content p a:hover {
               color: #F05247;
             }
-          ol#posts li .post-content p strong {
-            font: 19px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-            font-weight: bold;
-          }
-          ol#posts li .post-content p a {
-            color: #2694D0;
-          }
-          ol#posts li .post-content p a:hover {
-            color: #F05247;
-          }
 
-        ol#posts li .post-content ol {
-          list-style-type:decimal;
-          margin: 30px 125px 0 125px;
-          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-          color: #666666;    
-        }
-          ol#posts li .post-content ol li {
-            padding-left:25px;
+          ol#posts li .post-content ol {
+            list-style-type:decimal;
+            margin: 30px 125px 0 125px;
+            font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            color: #666666;    
           }
-            ol#posts li .post-content ol li a {
-              color: #2694D0;
+            ol#posts li .post-content ol li {
+              padding-left:25px;
             }
-              ol#posts li .post-content ol li a:hover {
-                color: #F05247;
+              ol#posts li .post-content ol li a {
+                color: #2694D0;
               }
-        ol#posts li .post-content ul {
-          list-style-type: disc;
-          margin: 30px 125px 0 118px;
-          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-          color: #666666;
-        }
-          ol#posts li .post-content ul li {
-            padding-left:25px;
+                ol#posts li .post-content ol li a:hover {
+                  color: #F05247;
+                }
+          ol#posts li .post-content ul {
+            list-style-type: disc;
+            margin: 30px 125px 0 118px;
+            font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            color: #666666;
           }
-            ol#posts li .post-content ul li a {
-              color: #2694D0;
+            ol#posts li .post-content ul li {
+              padding-left:25px;
             }
-              ol#posts li .post-content ul li a:hover {
-                color: #F05247;
+              ol#posts li .post-content ul li a {
+                color: #2694D0;
               }
-        ol#posts li .post-content img {
-          width: 100%;
-        }
-        ol#posts li .post-content .video {
-          margin: 25px 25px 0px 25px;
-        }
-        ol#posts li .post-content .text iframe {
-          
-        }
-          .text .fluid-width-video-wrapper {
-            margin: 20px 0;
+                ol#posts li .post-content ul li a:hover {
+                  color: #F05247;
+                }
+          ol#posts li .post-content img {
+            width: 100%;
           }
-        ol#posts li .post-content pre {
-            margin: 20px 75px
-        }
-        ol#posts li .post-content blockquote, ol#posts li .post-content blockquote p {
-          margin: 30px 50px 0 50px;
-          font: normal normal 18px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-          font-style: italic;
-          color: #666666;      
+          ol#posts li .post-content .video {
+            margin: 25px 25px 0px 25px;
           }
-
-        ol#posts li ul.tags {
-          display:block;
-          height: 20px;
-          width: 300px;
-          margin: 0 auto;
-        }
-          ol#posts li ul.tags li {
-            float: left;
-            padding-right: 5px;
-          }
-          ol#posts li ul.tags li:after {
-            content: ", ";
-          }
-          ol#posts li ul.tags li:last-child {
+          ol#posts li .post-content .text iframe {
             
-          }       
-          ol#posts li ul.tags li:last-child:after {
-            content: "";
           }
-          ol#postst li .post-content .tags ul a {
-          text-align:center;
-          list-style-type: none;
-          margin: 30px 125px 0 118px;
-          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-          color: #666666;
-          border: 1px solid red;
-          }        
+            .text .fluid-width-video-wrapper {
+              margin: 20px 0;
+            }
+          ol#posts li .post-content pre {
+              margin: 20px 75px
+          }
+          ol#posts li .post-content blockquote, ol#posts li .post-content blockquote p {
+            margin: 30px 50px 0 50px;
+            font: normal normal 18px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            font-style: italic;
+            color: #666666;      
+            }
 
-        ol#posts li .post-data p {
-          margin: 30px auto;
-          text-align: center;
-          text-transform: uppercase;
-          font: normal normal 14px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-        }
-
-     
-      /* video post */
+          ol#posts li ul.tags {
+            display:block;
+            height: 20px;
+            width: 300px;
+            margin: 0 auto;
+          }
+            ol#posts li ul.tags li {
+              float: left;
+              padding-right: 5px;
+            }
+            ol#posts li ul.tags li:after {
+              content: ", ";
+            }
+            ol#posts li ul.tags li:last-child {
               
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-      }
-      
-      .video-wrapper iframe,  
-      .video-wrapper object,  
-      .video-wrapper embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
+            }       
+            ol#posts li ul.tags li:last-child:after {
+              content: "";
+            }
+            ol#postst li .post-content .tags ul a {
+            text-align:center;
+            list-style-type: none;
+            margin: 30px 125px 0 118px;
+            font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            color: #666666;
+            border: 1px solid red;
+            }        
 
+          ol#posts li .post-data p {
+            margin: 30px auto;
+            text-align: center;
+            text-transform: uppercase;
+            font: normal normal 14px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          }
 
-      /* Sharing */
+        /* Sharing */
 
         ol#posts li .post-sharing {
             background: #fff;
@@ -1192,597 +1226,600 @@
         #tmblr .marketing_wrapper #nav a, #tmblr .marketing_wrapper #nav span  { 
          }
 
-    #banner {
-      display: block;
-      width: 234px;
-      height: 350px;
-      top: 82px;
-      right: 19px;
-      padding: 20px;
-      border-right: 1px solid #ddd;
-      border-bottom: 1px solid #ddd;
-      background: #FFF url(http://kera.io/assets/KERA-blog_banner.png) no-repeat 100% 100%;
-      font-size: 30px
-    }
-      #banner p {
-        font-size: 22px
+      /* ============================================================
+         Posts : Specific
+      ============================================================ */
+     
+      /* video post */
+              
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
       }
-
-  </style>
-
-<!--[if IE 9]>
-  <style type="text/css">
       
-      #blog_sidebar #social {
-        margin-top: 25px;
+      .video-wrapper iframe,  
+      .video-wrapper object,  
+      .video-wrapper embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
-      #posts .text iframe {
-        margin-left:-57px; 
-      }
-  </style>
-<![endif]-->
 
-  <script type="text/javascript" src="https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js"></script>
+    </style>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $(".text").fitVids();
-    });
-  </script>
+    <!--[if IE 9]>
+    <style type="text/css">
+        
+        #blog_sidebar #social {
+          margin-top: 25px;
+        }
+        #posts .text iframe {
+          margin-left:-57px; 
+        }
+    </style>
+    <![endif]-->
+
+    <script type="text/javascript" src="https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      // Target your .container, .wrapper, .post, etc.
+      $(".text").fitVids();
+      });
+    </script>
+    
+    <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?cce02fd0a15b0a4373013178e6c56abc"></script>
+
+  </head>
+
+  <body>
   
-  <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?cce02fd0a15b0a4373013178e6c56abc"></script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <div id="tmblr" class="container">
 
-  <meta http-equiv="x-dns-prefetch-control" content="off"/>
+      <header class="marketing_header">
+        <div class="marketing_wrapper">
+          <a href="http://kera.io/" class="logo">Kera</a>
 
-</head>
+          <ul class="marketing_links">
+            <li class="grid_button"><a href="http://blog.kera.io">Blog</a></li>
+            <li class="grid_button"><a href="http://kera.io/pricing">Pricing</a></li>
+            <li class="grid_button"><a href="http://kera.io/auth/google_oauth2">Login</a></li>
+            <li class="grid_button"><a href="http://kera.io/pricing" class="primary">Signup</a></li>
+          </ul>
+        </div>
+      </header>
 
-<body>
-  
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
-  
-  <div id="tmblr" class="container">
-
-    <header class="marketing_header">
       <div class="marketing_wrapper">
-        <a href="http://kera.io/" class="logo">Kera</a>
 
-        <ul class="marketing_links">
-          <li class="grid_button"><a href="http://blog.kera.io">Blog</a></li>
-          <li class="grid_button"><a href="http://kera.io/pricing">Pricing</a></li>
-          <li class="grid_button"><a href="http://kera.io/auth/google_oauth2">Login</a></li>
-          <li class="grid_button"><a href="http://kera.io/pricing" class="primary">Signup</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <div class="marketing_wrapper">
-
-        <ul id="blog_sidebar">
-          <li>
-            <div id="rss">
-              <span class="share-rss"></span><p><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></p>
-            </div>
-
-            <div id="email">
-              <form style="" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=kerablog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-                <div><span class="share-email"></span><p>Subscribe with Email</p></div>
-                <input type="text" name="email" value=""/>
-                <input type="hidden" value="kerablog" name="uri"/>
-                <input type="hidden" name="loc" value="en_US"/>
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
-            <div id="social">
-              <a class="share-button share-twitter" href="http://twitter.com/keraproject" alt="Follow @keraproject">
-              </a>
-              <a class="share-button share-facebook" href="https://www.facebook.com/keraproject">
-              </a>
-              <a class="share-button share-linkedin" href="http://www.linkedin.com/company/2697869">
-              </a>
-              <a class="share-button share-google" href="https://plus.google.com/u/0/115380801038755793987/">
-              </a>
-            </div>
-          </li>
-          <li>
-            <a href="http://kera.io" id="banner">
-              <p>Learn more about the world's first <br> <strong>Customer Success<br>Platform</strong></p>
-            </a>
-          </li>
-        </ul>
-      
-        <ol id="posts">
-                  
-     {block:Posts}
-
-        {block:Text}
-        <li class="post text">
-            
-          <div class="post-content">
-          {block:Title}
-            <h1><a href="{Permalink}">{Title}</a></h1>
-          {/block:Title}
-          <p>{Body}</p>
-          </div>
-
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
-            
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>                  
+          <ul id="blog_sidebar">
+            <li>
+              <div id="rss">
+                <span class="share-rss"></span><p><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></p>
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                <a href="mailto:?&subject={Title}&body=Check%20out%20this%20link:%20{Permalink}">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>   
-        {/block:Text}
+              <div id="email">
+                <form style="" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=kerablog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+                  <div><span class="share-email"></span><p>Subscribe with Email</p></div>
+                  <input type="text" name="email" value=""/>
+                  <input type="hidden" value="kerablog" name="uri"/>
+                  <input type="hidden" name="loc" value="en_US"/>
+                  <input type="submit" value="Subscribe" />
+                </form>
+              </div>
+              <div id="social">
+                <a class="share-button share-twitter" href="http://twitter.com/keraproject" alt="Follow @keraproject">
+                </a>
+                <a class="share-button share-facebook" href="https://www.facebook.com/keraproject">
+                </a>
+                <a class="share-button share-linkedin" href="http://www.linkedin.com/company/2697869">
+                </a>
+                <a class="share-button share-google" href="https://plus.google.com/u/0/115380801038755793987/">
+                </a>
+              </div>
+            </li>
+            <li>
+              <a href="http://kera.io" id="banner">
+                <p>Learn more about the world's first <br> <strong>Customer Success<br>Platform</strong></p>
+              </a>
+            </li>
+          </ul>
         
-        
-        {block:Photo}
-        <li class="post photo">
-                      
-          <div class="post-content">
-            <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}
-            </div>
-            {block:Caption}
-            <div class="caption">{Caption}
-            </div>{/block:Caption}
-          </div>
+          <ol id="posts">
+                    
+          {block:Posts}
 
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
+            {block:Text}
+            <li class="post text">
+                
+              <div class="post-content">
+              {block:Title}
+                <h1><a href="{Permalink}">{Title}</a></h1>
+              {/block:Title}
+              <p>{Body}</p>
+              </div>
 
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
+
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>                  
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                    <a href="mailto:?&subject={Title}&body=Check%20out%20this%20link:%20{Permalink}">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>   
+            {/block:Text}
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
-              </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
-
-        </li>
-        {/block:Photo}
-
-        
-        {block:Photoset}
-        <li class="post photoset">
-          
-          <div class="post-content">
-            {Photoset-250}
-            {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
-            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-          </div>
-
-            {block:HasTags}
-            <ul class="tags">
-              {block:Tags}
-              <li><a href="{TagURL}">{Tag}</a></li> 
-              {/block:Tags}
-            </ul>
-            {/block:HasTags}
-
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>            
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            {block:Photo}
+            <li class="post photo">
+                          
+              <div class="post-content">
+                <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                </div>
+                {block:Caption}
+                <div class="caption">{Caption}
+                </div>{/block:Caption}
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
+
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>
+            {/block:Photo}
+
+            {block:Photoset}
+            <li class="post photoset">
+              
+              <div class="post-content">
+                {Photoset-250}
+                {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
               </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+
+                {block:HasTags}
+                <ul class="tags">
+                  {block:Tags}
+                  <li><a href="{TagURL}">{Tag}</a></li> 
+                  {/block:Tags}
+                </ul>
+                {/block:HasTags}
+
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>            
+
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>
+            {/block:Photoset}
+
+            {block:Quote}
+            <li class="post quote">
+
+              <div class="post-content">
+                <h1>{Quote}</h1>
+                {block:Source}<div class="source">{Source}</div>{/block:Source}
               </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>
-        {/block:Photoset}
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
 
-        {block:Quote}
-        <li class="post quote">
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
 
-          <div class="post-content">
-            <h1>{Quote}</h1>
-            {block:Source}<div class="source">{Source}</div>{/block:Source}
-          </div>
-
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
+            </li>
+            {/block:Quote}
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            {block:Link}
+            <li class="post link">
+              
+              <div class="post-content">
+                <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
+                {block:Description}<div class="caption">{Description}</div>{/block:Description}
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>
-        {/block:Quote}
-        
-        {block:Link}
-        <li class="post link">
-          
-          <div class="post-content">
-            <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
-            {block:Description}<div class="caption">{Description}</div>{/block:Description}
-          </div>
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
 
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
 
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
+            </li>
+            {/block:Link}
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            {block:Chat}
+            <li class="post chat">
+              
+              <div class="post-content">
+                {block:Title}
+                <h1>{Title}</h1>
+                {/block:Title}
+                
+                <ul>
+                {block:Lines}
+                  <li class="{Alt} user_{UserNumber}">
+                    {block:Label}<span class="label">{Label} </span>{/block:Label}{Line}
+                  </li>
+                {/block:Lines}
+                </ul>
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>
-        {/block:Link}
-        
-        {block:Chat}
-        <li class="post chat">
-          
-          <div class="post-content">
-            {block:Title}
-            <h1>{Title}</h1>
-            {/block:Title}
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
+
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>
+            {/block:Chat}
             
-            <ul>
-            {block:Lines}
-              <li class="{Alt} user_{UserNumber}">
-                {block:Label}<span class="label">{Label} </span>{/block:Label}{Line}
-              </li>
-            {/block:Lines}
-            </ul>
-          </div>
+            {block:Video}
+            <li class="post video">
+              
+              <div class="post-content">
+                <div class="video-wrapper">
+                  {Video-500}
+                </div>
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              </div>
 
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
 
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>
+            {/block:Video}
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            {block:Audio}
+            <li class="post audio">
+              
+              <div class="post-content">
+               
+               <ul class="album-details">
+                <li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
+                <li>{block:Artist}By {Artist}{/block:Artist}</li>
+               </ul><!--album-details close-->
+                
+               <div class="album">
+                 {block:AlbumArt}
+                  <img src="{AlbumArtURL}"/ >
+                 {/block:AlbumArt}
+                 {AudioPlayerGrey}
+               </div>
+               {block:AudioEmbed}
+               
+               <div class="spotify-500">
+                 {AudioEmbed-500}
+               </div>
+               
+               <div class="spotify-400">
+                 {AudioEmbed-400}
+               </div>
+               
+               <div class="spotify-250">
+                 {AudioEmbed-250}
+               </div>
+              
+                {/block:AudioEmbed}
+                <div class="caption">
+                  {block:Caption}{Caption}{/block:Caption}
+                </div>
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>
-        {/block:Chat}
-        
-        {block:Video}
-        <li class="post video">
-          
-          <div class="post-content">
-            <div class="video-wrapper">
-              {Video-500}
-            </div>
-            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-          </div>
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
 
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+              
+            </li>
+            {/block:Audio}
             
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            {block:Answer}
+            <li class="post answer">
+              
+              <div class="post-content">
+                <h1>{Asker} asks:</h1>
+                <p>{Question}</p>
+                <blockquote >{Answer}</blockquote>
               </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
 
-        </li>
-        {/block:Video}
-        
-        {block:Audio}
-        <li class="post audio">
-          
-          <div class="post-content">
-           
-           <ul class="album-details">
-            <li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
-            <li>{block:Artist}By {Artist}{/block:Artist}</li>
-           </ul><!--album-details close-->
+                <div class="post-data">
+                  <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+                </div>
+
+                <div class="post-sharing">
+                  <a class="share-button share-twitter">
+                  </a>
+                  <a class="share-button share-facebook">
+                  </a>
+                  <a class="share-button share-linkedin">
+                  </a>
+                  <a class="share-button share-google">
+                  </a>
+                  <a class="share-button share-email">               
+                  </a>
+                </div>
+                
+                <div class="sharing-frames">
+                  <div class="frames twitter-frame">
+                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+                  </div>
+                  <div class="frames facebook-frame">
+                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+                  </div>
+                  <div class="frames linkedin-frame">
+                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+                  </div>
+                  <div class="frames google-frame">
+                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+                  </div>
+                  <div class="frames email-frame">
+                      <a href="">Email &raquo;</a>
+                  </div>
+                </div>
+
+            </li>
+            {/block:Answer}
+
+          {/block:Posts}
             
-           <div class="album">
-             {block:AlbumArt}
-              <img src="{AlbumArtURL}"/ >
-             {/block:AlbumArt}
-             {AudioPlayerGrey}
-           </div>
-           {block:AudioEmbed}
-           
-           <div class="spotify-500">
-             {AudioEmbed-500}
-           </div>
-           
-           <div class="spotify-400">
-             {AudioEmbed-400}
-           </div>
-           
-           <div class="spotify-250">
-             {AudioEmbed-250}
-           </div>
-          
-            {/block:AudioEmbed}
-            <div class="caption">
-              {block:Caption}{Caption}{/block:Caption}
-            </div>
-          </div>
-
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
-            
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
-              </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
-          
-        </li>
-        {/block:Audio}
-        
-        {block:Answer}
-        <li class="post answer">
-          
-          <div class="post-content">
-            <h1>{Asker} asks:</h1>
-            <p>{Question}</p>
-            <blockquote >{Answer}</blockquote>
-          </div>
-
-            <div class="post-data">
-              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
-            </div>
-
-            <div class="post-sharing">
-              <a class="share-button share-twitter">
-              </a>
-              <a class="share-button share-facebook">
-              </a>
-              <a class="share-button share-linkedin">
-              </a>
-              <a class="share-button share-google">
-              </a>
-              <a class="share-button share-email">               
-              </a>
-            </div>
-            
-            <div class="sharing-frames">
-              <div class="frames twitter-frame">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
-              </div>
-              <div class="frames facebook-frame">
-                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-              </div>
-              <div class="frames linkedin-frame">
-                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-              </div>
-              <div class="frames google-frame">
-                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-              </div>
-              <div class="frames email-frame">
-                  <a href="">Email &raquo;</a>
-              </div>
-            </div>
-
-        </li>
-        {/block:Answer}
-
-      {/block:Posts}
-          
           {block:PermalinkPage}
 
           <div id="comments">
@@ -1810,90 +1847,89 @@
           </div>
 
           {/block:PermalinkPage}
-          
-        </ol><!--posts close-->
+            
+          </ol><!--posts close-->
 
-        {block:Pagination}
-        <div id="nav">
-            {block:PreviousPage}
-                <a href="{PreviousPage}">Previous</a>
-            {/block:PreviousPage}
+          {block:Pagination}
+          <div id="nav">
+              {block:PreviousPage}
+                  <a href="{PreviousPage}">Previous</a>
+              {/block:PreviousPage}
 
-            {block:JumpPagination length="5"}
-                {block:CurrentPage}
-                    <span class="current_page">{PageNumber}</span>
-                {/block:CurrentPage}
+              {block:JumpPagination length="5"}
+                  {block:CurrentPage}
+                      <span class="current_page">{PageNumber}</span>
+                  {/block:CurrentPage}
 
-                {block:JumpPage}
-                    <a class="jump_page" href="{URL}">{PageNumber}</a>
-                {/block:JumpPage}
-            {/block:JumpPagination}
+                  {block:JumpPage}
+                      <a class="jump_page" href="{URL}">{PageNumber}</a>
+                  {/block:JumpPage}
+              {/block:JumpPagination}
 
-            {block:NextPage}
-                <a href="{NextPage}">Next</a>
-            {/block:NextPage}
-        </div><!--nav close-->
-        {/block:Pagination}
-    
-    </div> <!--wrapper close-->
+              {block:NextPage}
+                  <a href="{NextPage}">Next</a>
+              {/block:NextPage}
+          </div><!--nav close-->
+          {/block:Pagination}
+      
+      </div> <!--wrapper close-->
 
-
-    <div class="marketing_social">
-      <div class="marketing_wrapper">
-        <p class="social_signup">
-          <a href="http://kera.io/pricing">
-            <span class="btn btn_primary">Sign up</span> Try Kera free for a month
-          </a>
-        </p>
-        <p class="social_facebook">
-          <span class="label">Facebook</span>
-          <span class="widget"><fb:like href="http://facebook.com/keraproject" send="true" layout="button_count" width="42" show_faces="false" font="arial" id="facebook-widget"></fb:like>
-         </span>
-        </p>
-        <p class="social_twitter">
-         <span class="label">Twitter</span>
-         <span class="widget"><a href="https://twitter.com/keraproject" class="twitter-follow-button" id="twitter-follow-button" data-show-count="false">Follow @keraproject</a>          
-         </span>
-        </p>
-      </div>
-    </div>
-
-    <footer class="marketing_footer">
-      <div class="marketing_wrapper">
-        <div class="legal">
-          <p>&copy; 2013, All rights reserved.</p>
-          <p class="marketing_footer_links"><a href="http://kera.io/privacy">Privacy Policy</a> <a href="http://kera.io/terms">Terms of Service</a> <a href="http://status.kera.io">Status</a></p>
-          <p>
-            Kera Software Inc. <br />
-            Toronto, Ontario<br />
-            Canada
+      <div class="marketing_social">
+        <div class="marketing_wrapper">
+          <p class="social_signup">
+            <a href="http://kera.io/pricing">
+              <span class="btn btn_primary">Sign up</span> Try Kera free for a month
+            </a>
           </p>
-          <p>
-            <a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6F;&#x72;&#x74;&#x40;&#x6B;&#x65;&#x72;&#x61;&#x2E;&#x69;&#x6F;">support@kera.io</a><br />
-            (647) 892-8180
+          <p class="social_facebook">
+            <span class="label">Facebook</span>
+            <span class="widget"><fb:like href="http://facebook.com/keraproject" send="true" layout="button_count" width="42" show_faces="false" font="arial" id="facebook-widget"></fb:like>
+           </span>
+          </p>
+          <p class="social_twitter">
+           <span class="label">Twitter</span>
+           <span class="widget"><a href="https://twitter.com/keraproject" class="twitter-follow-button" id="twitter-follow-button" data-show-count="false">Follow @keraproject</a>          
+           </span>
           </p>
         </div>
+      </div>
 
-        <div class="sitemap">
-
-          <ul class="footer_blog_entries">
-            <li><strong><a href="http://blog.kera.io">Recent Blog Posts</a></strong></li>
-            <li><a href="http://blog.kera.io/post/40920774387/web-apps-onboarding-how-to-treat-your-new-users">Web Apps Onboarding: How to Treat Your New Users</a></li>
-            <li><a href="http://blog.kera.io/post/40686954483/how-to-fix-a-crappy-conversion-rate">How To Fix a Crappy Conversion Rate</a></li>
-            <li><a href="http://blog.kera.io/post/40192110962/getting-professional-audio-for-your-videos-and">Getting Professional Audio For Your Videos and Tutorials</a></li>
-          </ul>
-
-          <div class="mixpanel">
-            <a href="https://mixpanel.com/f/partner"><img src="https://mixpanel.com/site_media/images/partner/badge_light.png" alt="Mobile and Web Analytics" /></a>
+      <footer class="marketing_footer">
+        <div class="marketing_wrapper">
+          <div class="legal">
+            <p>&copy; 2013, All rights reserved.</p>
+            <p class="marketing_footer_links"><a href="http://kera.io/privacy">Privacy Policy</a> <a href="http://kera.io/terms">Terms of Service</a> <a href="http://status.kera.io">Status</a></p>
+            <p>
+              Kera Software Inc. <br />
+              Toronto, Ontario<br />
+              Canada
+            </p>
+            <p>
+              <a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6F;&#x72;&#x74;&#x40;&#x6B;&#x65;&#x72;&#x61;&#x2E;&#x69;&#x6F;">support@kera.io</a><br />
+              (647) 892-8180
+            </p>
           </div>
 
+          <div class="sitemap">
+
+            <ul class="footer_blog_entries">
+              <li><strong><a href="http://blog.kera.io">Recent Blog Posts</a></strong></li>
+              <li><a href="http://blog.kera.io/post/40920774387/web-apps-onboarding-how-to-treat-your-new-users">Web Apps Onboarding: How to Treat Your New Users</a></li>
+              <li><a href="http://blog.kera.io/post/40686954483/how-to-fix-a-crappy-conversion-rate">How To Fix a Crappy Conversion Rate</a></li>
+              <li><a href="http://blog.kera.io/post/40192110962/getting-professional-audio-for-your-videos-and">Getting Professional Audio For Your Videos and Tutorials</a></li>
+            </ul>
+
+            <div class="mixpanel">
+              <a href="https://mixpanel.com/f/partner"><img src="https://mixpanel.com/site_media/images/partner/badge_light.png" alt="Mobile and Web Analytics" /></a>
+            </div>
+
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
 
-  </div><!--container and tumlbr close-->
+    </div><!--container and tumlbr close-->
 
-  <!-- Various Embed Cods -->
+    <!-- Various Embed Codes -->
 
     <!-- Google+ -->
 
@@ -1950,6 +1986,6 @@
       mixpanel.track('Marketing Page View');
     </script>
 
-</body>
+  </body>
 
 </html>
