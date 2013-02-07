@@ -946,7 +946,7 @@
                 background-position: -92px -280px;
             }      
 
-        #banner {
+        #blog_sidebar #banner {
           display: block;
           width: 234px;
           height: 350px;
@@ -954,13 +954,36 @@
           right: 19px;
           padding: 20px;
           border-right: 1px solid #ddd;
-          border-bottom: 1px solid #ddd;
           background: #FFF url(http://kera.io/assets/KERA-blog_banner.png) no-repeat 100% 100%;
           font-size: 30px
         }
-          #banner p {
-            font-size: 22px
+          #blog_sidebar #banner p {
+            font-size: 22px;
           }
+        #blog_sidebar #tags {
+          padding: 5px 25px 25px 25px;
+          border-bottom: 1px solid #ddd;
+        }
+          #blog_sidebar #tags p {
+            text-transform: uppercase;
+            font: normal normal 15px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+            color: #666666;          
+          }
+            #blog_sidebar #tags #tagCloud {
+              font: normal normal 20px/32px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+              color: #666666;          
+            }
+              #blog_sidebar #tags #tagCloud ul li {
+                border: none;
+                display: inline;
+              }
+              #blog_sidebar #tags #tagCloud ul li:after {
+                content: ", ";
+              }
+              #blog_sidebar #tags #tagCloud ul li:last-child:after {
+                content: "";
+              }
+
 
       /* ============================================================
          Posts : General
@@ -1326,6 +1349,10 @@
               <a href="http://kera.io" id="banner">
                 <p>Learn more about the world's first <br> <strong>Customer Success<br>Platform</strong></p>
               </a>
+            </li>
+            <li id="tags">
+              <p>Tags</p>
+              <div id="tagCloud"></div><script type="text/javascript" src="http://post-theory.com/public/tagcloud/kerablog?sort=time&limit=20&scale=false&case=title&html=ul" async="async"></script>
             </li>
           </ul>
         
