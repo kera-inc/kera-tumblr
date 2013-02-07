@@ -11,6 +11,7 @@
     
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
   
+  <meta name="google-site-verification" content="zEoSqIxL4v68atpFixOofV35PPOH_ifKmuV8iTvq4KU" />
     <meta name="image:Text Icon" content=""/>
     <meta name="image:Video Icon" content=""/>
     <meta name="image:Photo Icon" content=""/>
@@ -20,6 +21,13 @@
     <meta name="image:Audio Icon" content=""/>
     
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+
+<script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
+<script type="text/javascript">
+    new HelloBar(61451,89629);
+</script>
+
+
 
   <style type="text/css">
     /*///////////////////////////////////////// css reset /////////////////////////////////////////*/
@@ -79,9 +87,9 @@
     }
     
     .icon {
-      background-repeat: no-repeat;
-      background-size: 24px 24px;
-      height: 24px;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        height: 24px;
       width: 24px;
       margin-right: 8px;
       float: left;
@@ -343,13 +351,29 @@
       display: none;
     }
     
+    #social {
+        position: absolute;
+        right: 19px;
+        top: 74px;
+        width: 288px;
+    }
+    
+    #social #facebook-widget {
+        float: left;
+        margin-right: 24px;
+    }
+    
+    #header_shell #banner {
+        top: 111px;        
+    }
+    
     #rss {
       display: block;
       position: absolute;
       background: #FFF;
       width: 265px;
       height: 25px;
-      top: 492px;
+      top: 521px;
       right: 19px;
       border: 1px solid #DDD;
       padding: 10px;
@@ -383,14 +407,30 @@
       <div id="header_shell">
         <a href="http://kera.io" class="brand">Kera</a>
         <ul>
-          <li><a href="http://twitter.com/keraproject" target="_blank" id="twitter_link">@keraproject</a></li>
-          <li><a href="http://kera.io/pricing" id="pricing_link">Pricing &amp; Signup</a></li>
+          <li><a href="http://kera.io/auth/google_oauth2" id="login_link">Login</a></li>
           <li><a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6F;&#x72;&#x74;&#x40;&#x6B;&#x65;&#x72;&#x61;&#x2E;&#x69;&#x6F" id="contact_link">Contact</a></li>
           <li><a href="http://kera.mytribehr.com/careers" id="careers_link">Careers</a></li>
           <li><a href="http://blog.kera.io" id="blog_link">Blog</a></li>
-          <li><a href="/auth/google_oauth2" id="login_link">Login</a></li>
+          <li><a href="http://kera.io/pricing" id="pricing_link">Pricing &amp; Signup</a></li>
         </ul>        
         
+        <div id="social">
+                <fb:like href="http://facebook.com/keraproject" send="true" layout="button_count" width="42" show_faces="false" font="arial" id="facebook-widget"></fb:like>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=389742301057307";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+        <a href="https://twitter.com/keraproject" class="twitter-follow-button" id="twitter-follow-button" data-show-count="false">Follow @keraproject</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
         <a href="http://kera.io" id="banner">
           <p>Learn more about the world's first <strong>Customer Success<br>Platform</strong></p>
         </a>
@@ -428,7 +468,7 @@
           {/block:Tags}
         </ul>
         {/block:HasTags}
-        
+
         <div class="post-sharing">
           <div class="share-button share-twitter">
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
@@ -453,7 +493,34 @@
           </div>
         </div>
 
+    
+    <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+    */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://keraproject.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=keraproject">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    {/block:Permalink}<script type="text/javascript">
+    var disqus_shortname = 'keraproject';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'http://keraproject.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+    
+    
       </li>
+
+
+    
       {/block:Text}
       
       {block:Photo}
@@ -667,6 +734,8 @@
           <blockquote >{Answer}</blockquote>
         </div>
         
+
+
         {block:HasTags}
         <ul class="tags">
           {block:Tags}
@@ -677,8 +746,14 @@
 
       </li>
       {/block:Answer}
+
+
                 
     {/block:Posts}
+
+
+
+
     </ol><!--posts close-->
 
     <div id="nav">
