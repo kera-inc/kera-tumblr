@@ -1,393 +1,1240 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
-    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+
+    <title>Kera - Blog{block:PostTitle} : {PostTitle}{/block:PostTitle}</title>
   
     <link rel="shortcut icon" href="{Favicon}"/>
-    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
     
-      {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
     
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
   
-  <meta name="google-site-verification" content="zEoSqIxL4v68atpFixOofV35PPOH_ifKmuV8iTvq4KU" />
-    <meta name="image:Text Icon" content=""/>
-    <meta name="image:Video Icon" content=""/>
-    <meta name="image:Photo Icon" content=""/>
-    <meta name="image:Quote Icon" content=""/>
-    <meta name="image:Link Icon" content=""/>
-    <meta name="image:Chat Icon" content=""/>
-    <meta name="image:Audio Icon" content=""/>
+    <meta name="google-site-verification" content="zEoSqIxL4v68atpFixOofV35PPOH_ifKmuV8iTvq4KU" />
     
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+    
+    <script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
+    <script type="text/javascript">
+        new HelloBar(61451,89629);
+    </script>
 
-<script type="text/javascript" src="//www.hellobar.com/hellobar.js"></script>
-<script type="text/javascript">
-    new HelloBar(61451,89629);
-</script>
+    <!--[if lt IE 9]>
+      <script src="https://www.kera.io/assets/html5shiv-378674ee01d5754c948d7fe9c5f558ab.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 
 
-  <style type="text/css">
-    /*///////////////////////////////////////// css reset /////////////////////////////////////////*/
-    
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, font, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      font: inherit;
-      font-size: 100%;
-      vertical-align: baseline; }
-    
-    body {
-      line-height: 1.5em; }
-    
-    ol, ul {
-      list-style: none; }
-    
-    blockquote, q {
-      quotes: none; }
-    
-    /* removes fuzzy blue outline for :focus in webkit */
-    *:focus {
-      outline: none; }
+    <script type="text/javascript">
+    $(function() {
+      var grid = 25;
+
+      $('.grid_button').each(function() {
+        // measure the width of the item and round it up to the nearest grid size
+        var size = $(this).width();
+        var roundedSize = Math.ceil(size/grid) * grid;
+        $(this).css({ width: roundedSize });
+      });
+    });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".sharing-frames").hide();
+        $(".frames").hide();
         
-    /*///////////////////////////////////////////////// global styles ///////////////////////////////////////////////*/
-    
-    * {
-    }
-    
-    a {
-      text-decoration: none;
-    }
-    
-    pre {
-        font-family: Monaco, Courier New;
-        font-size: 11px;
-        width: 100%;
-        display: block;
-        overflow-x: scroll;
-    }
-    
-    blockquote {
-        margin: 0 0 16px 10px;
-        padding: 5px 20px;
-        border-left: 3px solid #DDD;
-        font: normal 300 18px/26px 'Helvetica Neue', Helvetica, Arial;
-        color: #707070;
-    }
-    
-    .icon {
-        background-repeat: no-repeat;
-        background-size: 24px 24px;
-        height: 24px;
-      width: 24px;
-      margin-right: 8px;
-      float: left;
-      position: relative;
-      top: -2px;
-    }
+        $('.share-twitter').click(function(event){
+          var sharingFrame = $(event.target).parent().next();
+          sharingFrame.find('.frames').hide();
+          sharingFrame.find('.twitter-frame').show();
+          sharingFrame.slideToggle();
+          showMore(event);
+        });
+        $('.share-facebook').click(function(event){
+          var sharingFrame = $(event.target).parent().next();
+          sharingFrame.find('.frames').hide();
+          sharingFrame.find('.facebook-frame').show();
+          sharingFrame.slideToggle();
+          showMore(event);
+        });
+        $('.share-linkedin').click(function(event){
+          var sharingFrame = $(event.target).parent().next();
+          sharingFrame.find('.frames').hide();
+          sharingFrame.find('.linkedin-frame').show();
+          sharingFrame.slideToggle();
+          showMore(event);
+        });
+      $('.share-google').click(function(event){
+          var sharingFrame = $(event.target).parent().next();
+          sharingFrame.find('.frames').hide();
+          sharingFrame.find('.google-frame').show();
+          sharingFrame.slideToggle();
+          showMore(event);
+        });
+      $('.share-email').click(function(event){
+          var sharingFrame = $(event.target).parent().next();
+          sharingFrame.find('.frames').hide();
+          sharingFrame.find('.email-frame').show();
+          sharingFrame.slideToggle();
+          showMore(event);
+        });
+      });
+    </script>
+
+
+    <style type="text/css">
+
+      /*///////////////////////////////////////// css reset /////////////////////////////////////////*/
       
-    .post-content img,
-    .video-wrapper,
-    .album {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      vertical-align: bottom;
-    }
-    
-    .post-content .caption {
-      font-size: 1.125em;
-      margin: .5em 0 0 0;
-    }
-        
-    .read_more_container {
-      margin-bottom: 0;
-    }
-    
-    .tags {
-      display: none;
-      clear: both;
-    }
-    
-    .notes {
-      position: relative;
-      top: -64px;
-      font-size: .875em;
-    }
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, font, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline; }
       
-    .notes li {
-      padding: .25em;
-    }
-        
-    .notes .note a {
-      border-bottom: none;
-      margin-right: 2px;
-    }
-    
-    .notes .note a img {
-      vertical-align: middle;
-    }
+      body {
+        line-height: 1.5em; 
+        }
       
-    .note .action a {
-      border-bottom: 1px solid rgba(0,0,0,.17);
-    }
-    
-    .note .action a:hover {
-      color: #000;
-    }
+      ol, ul {
+        list-style: none; }
       
-     #footer {
-      font-size: .75em;
-      line-height: 1.5em;
-      padding: 48px 0;
-    }
-    
-    /* text post */
-    
-    .text .icon {
-      background-image: url("{image:Text Icon}"); 
-    }
+      blockquote, q {
+        quotes: none; }
       
-    .text .tags {
-      padding-top: .125em;
-    }
+      /* removes fuzzy blue outline for :focus in webkit */
+      *:focus {
+        outline: none; }
           
-    /* photo post */
-    
-    .photo .icon {
-      background-image: url("{image:Photo Icon}"); 
-    }
+      /*///////////////////////////////////////////////// global styles ///////////////////////////////////////////////*/
       
-    .content-img-wrapper {
-      display: block;
-      width: 100%;
-      margin: 0 auto;
-    }
-    
-    /* photoset post */
-    
-    .photoset .icon {
-      background-image: url("{image:Photo Icon}"); 
-    }
+      * {
+      }
+      
+      a {
+        text-decoration: none;
+      }
         
-    div[id^="photoset"] {
-      display: none;
-    }
-    
-    .photoset .indv-caption {
-      font-size: .875em;
-      line-height: 2.5em;
-      margin: 0 0 1px 0;
-      font-style: italic;
-    }
-        
-    /* video post */
-    
-    .video .icon {
-      background-image: url("{image:Video Icon}"); 
-    }
-        
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-    }
-    
-    .video-wrapper iframe,  
-    .video-wrapper object,  
-    .video-wrapper embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    
-    /* audio post */
-    
-    .audio .icon {
-      background-image: url("{image:Audio Icon}"); 
-    }
-      
-    .album-details h1 {
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(0,0,0,.25);
-      margin-bottom: 4px;
-    }
-    
-    .album-details li {
-      display: inline;
-      font-size: .875em;
-    }
-      
-    .album {
-      margin-top: 24px;
-      background: transparent;
-    }
-    
-    .album img {
-      -webkit-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
-      -moz-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
-      -o-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
-      box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
-      border-top: 1px solid rgba(0,0,0,.05);
-      border-right: 1px solid rgba(0,0,0,.05);
-      border-left: 1px solid rgba(0,0,0,.05);
-    }
-      
-    .audio_player {
-      padding: 12px 0 0 4px;
-      background: #e4e4e4;
-    }
-    
-    .audio .caption {
-      margin-top: 24px;
-    }
-      
-    /* chat post */
-    
-    .chat .icon {
-      background-image: url("{image:Chat Icon}"); 
-    }
-      
-    .chat h1 {
-      margin: 8px 0;
-    }
-      
-    .chat .post-content ul {
-      margin: 1em 0 2em 0;
-      border-top: 2px dotted rgba(0,0,0,.07);
-    }
-    
-    .chat .label {
-      font-weight: bold;
-    }
-    
-    .chat .post-content li {
-      padding: 16px;
-      border-bottom: 2px dotted rgba(0,0,0,.07);
-    }
-        
-    .chat .post-content li.odd {
-      padding-left: 16px;
-    }
-    
-    .chat .post-content li.even {
-      padding-left: 32px;
-    }
-    
-    /* quote post */
-    
-    .quote .icon {
-      background-image: url("{image:Quote Icon}"); 
-    }
-        
-    .quote .source:before {
-      content: "\2014\A0";
-    }
-    
-    .quote .source {
-      margin: 1.125em 0 1.5em 0;
-      font-size: 1.125em;
-    }
-    
-    /* link post */
-    
-    .link .icon {
-      background-image: url("{image:Link Icon}"); 
-    }
-      
-    .link h1 a:link,
-    .link h1 a:visited {
-      color: {color:Text Color};
-    }
-    
-    .link h1 a:hover,
-    .link h1 a:active {
-      color: {color:Primary Color};
-    }
-    
-    .post-sharing {
-      position: relative;
-      height: 15px;
-      border-top: 1px solid #DDD;
-      padding: 20px 0 30px 0;
-    }
-    
-    .post-sharing .share-button {
-      position: absolute;
-      width: 100px;
-      top: 20px;
-    }
-    
-    .post-sharing .share-twitter {
-      top: 20px;
-      left: 0;
-    }
-    
-    .post-sharing .share-facebook {
-      top: 19px;
-      left: 90px;
-    }
-    
-    .post-sharing .share-linkedin {
-      left: 180px;
-    }
-    .post-sharing .share-google {
-      left: 287px;
-    }
-    #banner {
-      display: none;
-    }
-    
-    #social {
+
+      /*///////////// Kera Marketing ////////*/
+
+      /*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+
+      /* ==========================================================================
+         HTML5 display definitions
+         ========================================================================== */
+
+      /**
+       * Correct `block` display not defined in IE 8/9.
+       */
+
+
+      article,
+      aside,
+      details,
+      figcaption,
+      figure,
+      footer,
+      header,
+      hgroup,
+      nav,
+      section,
+      summary {
+          display: block;
+      }
+
+      /**
+       * Correct `inline-block` display not defined in IE 8/9.
+       */
+
+      audio,
+      canvas,
+      video {
+          display: inline-block;
+      }
+
+      /**
+       * Prevent modern browsers from displaying `audio` without controls.
+       * Remove excess height in iOS 5 devices.
+       */
+
+      audio:not([controls]) {
+          display: none;
+          height: 0;
+      }
+
+      /**
+       * Address styling not present in IE 8/9.
+       */
+
+      [hidden] {
+          display: none;
+      }
+
+      /* ==========================================================================
+         Base
+         ========================================================================== */
+
+      /**
+       * 1. Set default font family to sans-serif.
+       * 2. Prevent iOS text size adjust after orientation change, without disabling
+       *    user zoom.
+       */
+
+      html {
+          font-family: sans-serif; /* 1 */
+          -webkit-text-size-adjust: 100%; /* 2 */
+          -ms-text-size-adjust: 100%; /* 2 */
+      }
+
+      /**
+       * Remove default margin.
+       */
+
+      body {
+          margin: 0;
+      }
+
+      /* ==========================================================================
+         Links
+         ========================================================================== */
+
+      /**
+       * Address `outline` inconsistency between Chrome and other browsers.
+       */
+
+      a:focus {
+          outline: thin dotted;
+      }
+
+      /**
+       * Improve readability when focused and also mouse hovered in all browsers.
+       */
+
+      a:active,
+      a:hover {
+          outline: 0;
+      }
+
+      /* ==========================================================================
+         Typography
+         ========================================================================== */
+
+      /**
+       * Address variable `h1` font size within `section` and `article` contexts in
+       * Firefox 4+, Safari 5, and Chrome.
+       */
+
+      h1 {
+          font-size: 2em;
+      }
+
+      /**
+       * Address styling not present in IE 8/9, Safari 5, and Chrome.
+       */
+
+      abbr[title] {
+          border-bottom: 1px dotted;
+      }
+
+      /**
+       * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+       */
+
+      b,
+      strong {
+          font-weight: bold;
+      }
+
+      /**
+       * Address styling not present in Safari 5 and Chrome.
+       */
+
+      dfn {
+          font-style: italic;
+      }
+
+      /**
+       * Address styling not present in IE 8/9.
+       */
+
+      mark {
+          background: #ff0;
+          color: #000;
+      }
+
+      /**
+       * Correct font family set oddly in Safari 5 and Chrome.
+       */
+
+      code,
+      kbd,
+      pre,
+      samp {
+          font-family: monospace, serif;
+          font-size: 1em;
+      }
+
+      /**
+       * Improve readability of pre-formatted text in all browsers.
+       */
+
+      pre {
+          white-space: pre;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+
+      /**
+       * Set consistent quote types.
+       */
+
+      q {
+          quotes: "\201C" "\201D" "\2018" "\2019";
+      }
+
+      /**
+       * Address inconsistent and variable font size in all browsers.
+       */
+
+      small {
+          font-size: 80%;
+      }
+
+      /**
+       * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+       */
+
+      sub,
+      sup {
+          font-size: 75%;
+          line-height: 0;
+          position: relative;
+          vertical-align: baseline;
+      }
+
+      sup {
+          top: -0.5em;
+      }
+
+      sub {
+          bottom: -0.25em;
+      }
+
+      /* ==========================================================================
+         Embedded content
+         ========================================================================== */
+
+      /**
+       * Remove border when inside `a` element in IE 8/9.
+       */
+
+      img {
+          border: 0;
+      }
+
+      /**
+       * Correct overflow displayed oddly in IE 9.
+       */
+
+      svg:not(:root) {
+          overflow: hidden;
+      }
+
+      /* ==========================================================================
+         Figures
+         ========================================================================== */
+
+      /**
+       * Address margin not present in IE 8/9 and Safari 5.
+       */
+
+      figure {
+          margin: 0;
+      }
+
+      /* ==========================================================================
+         Forms
+         ========================================================================== */
+
+      /**
+       * Define consistent border, margin, and padding.
+       */
+
+      fieldset {
+          border: 1px solid #c0c0c0;
+          margin: 0 2px;
+          padding: 0.35em 0.625em 0.75em;
+      }
+
+      /**
+       * 1. Correct `color` not being inherited in IE 8/9.
+       * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+       */
+
+      legend {
+          border: 0; /* 1 */
+          padding: 0; /* 2 */
+      }
+
+      /**
+       * 1. Correct font family not being inherited in all browsers.
+       * 2. Correct font size not being inherited in all browsers.
+       * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+       */
+
+      button,
+      input,
+      select,
+      textarea {
+          font-family: inherit; /* 1 */
+          font-size: 100%; /* 2 */
+          margin: 0; /* 3 */
+      }
+
+      /**
+       * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+       * the UA stylesheet.
+       */
+
+      button,
+      input {
+          line-height: normal;
+      }
+
+      /**
+       * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+       *    and `video` controls.
+       * 2. Correct inability to style clickable `input` types in iOS.
+       * 3. Improve usability and consistency of cursor style between image-type
+       *    `input` and others.
+       */
+
+      button,
+      html input[type="button"], /* 1 */
+      input[type="reset"],
+      input[type="submit"] {
+          -webkit-appearance: button; /* 2 */
+          cursor: pointer; /* 3 */
+      }
+
+      /**
+       * Re-set default cursor for disabled elements.
+       */
+
+      button[disabled],
+      html input[disabled] {
+          cursor: default;
+      }
+
+      /**
+       * 1. Address box sizing set to `content-box` in IE 8/9.
+       * 2. Remove excess padding in IE 8/9.
+       */
+
+      input[type="checkbox"],
+      input[type="radio"] {
+          box-sizing: border-box; /* 1 */
+          padding: 0; /* 2 */
+      }
+
+      /**
+       * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+       * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+       *    (include `-moz` to future-proof).
+       */
+
+      input[type="search"] {
+          -webkit-appearance: textfield; /* 1 */
+          -moz-box-sizing: content-box;
+          -webkit-box-sizing: content-box; /* 2 */
+          box-sizing: content-box;
+      }
+
+      /**
+       * Remove inner padding and search cancel button in Safari 5 and Chrome
+       * on OS X.
+       */
+
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-decoration {
+          -webkit-appearance: none;
+      }
+
+      /**
+       * Remove inner padding and border in Firefox 4+.
+       */
+
+      button::-moz-focus-inner,
+      input::-moz-focus-inner {
+          border: 0;
+          padding: 0;
+      }
+
+      /**
+       * 1. Remove default vertical scrollbar in IE 8/9.
+       * 2. Improve readability and alignment in all browsers.
+       */
+
+      textarea {
+          overflow: auto; /* 1 */
+          vertical-align: top; /* 2 */
+      }
+
+      /* ==========================================================================
+         Tables
+         ========================================================================== */
+
+      /**
+       * Remove most spacing between table cells.
+       */
+       
+      table {
+          border-collapse: collapse;
+          border-spacing: 0;
+      }
+
+      /*! END normalize.css v2.0.1 | MIT License | git.io/normalize */
+
+
+      /* Typography */
+
+
+      a {
+        color: #2284c3;
+        text-decoration: none;
+      }
+      h1 {
+          font-family: 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+          font-size: 33px;
+          font-weight: light;
+          text-align: center;
+          line-height: 50px;
+          margin: 0px 100px;
+      }
+      h2 {
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        font-size: 40px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+      h3 {
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        font-size: 20px;
+        font-weight: normal;
+      }
+
+      input,textarea {
+        color: #666666;
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        font-weight: normal;
+      }
+
+      button {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        font-weight: normal;
+      }
+
+      @font-face{
+        font-family:'MercuryRegular';
+        src:url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-5310d085a5197e6c9f0a32fa52d9328a.eot);
+        src:url(https://www.kera.io/assets/marketing2/mercury_regular-webfont.eot?#iefix) format('embedded-opentype'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-5595aad32fa4d77b9e3fa4c12d1d8d44.woff) format('woff'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-0fade063ff1733cd7384ad10d103e178.ttf) format('truetype'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont.svg#MercuryRegular) format('svg');
+        font-weight:normal;
+        font-style:normal;
+      }
+      @font-face{
+        font-family:'MercuryMedium';
+        src:url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-a0285da3f13e339573f085c0964a49dd.eot);
+        src:url(https://www.kera.io/assets/marketing2/mercury_medium-webfont.eot?#iefix) format('embedded-opentype'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-35d5aed335f97eea76e898b8a2d7956c.woff) format('woff'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-d69ec3d8932872198d19f356b9b3f4b0.ttf) format('truetype'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont.svg#MercuryMedium) format('svg');
+        font-weight:normal;
+        font-style:normal;
+      }
+
+
+      /* Structure */
+
+      body {
+        font: light normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+        background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/T8umhpr3k/background2.png) center 7px;
+      }
+
+      body p {
+        font: normal normal 15px/29px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+      }
+
+
+      body .marketing_wrapper {
+        width: 1003px;
+        margin: 0 auto;
+        overflow:hidden;
+      }
+
+      body>iframe {
+        display: none;
+      }
+
+
+      .btn{display:block;line-height:50px;text-transform:uppercase;text-align:center;text-decoration:none;color:#FFF;background-color:#2284c3;background-image:url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png);}
+      .btn.btn_primary{background-color:#0b9b4b;}
+      .btn:hover{background-image:url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png);}
+
+      .marketing_header {
+        background: #fff;*zoom:1;
+        border-bottom: 1px solid #ddd;
+      }
+      .marketing_header:before,.marketing_header:after {
+        display: table;
+        content: "";
+        line-height: 0;
+      }
+      .marketing_header:after {
+        clear: both;
+      }
+      .marketing_header .marketing_wrapper {
+        position: relative;
+      }
+      .marketing_header .logo {
         position: absolute;
-        right: 19px;
-        top: 74px;
-        width: 288px;
-    }
-    
-    #social #facebook-widget {
+        left: 25px;
+        top: 30px;
+        width: 125px;
+        height: 38px;
+        text-indent: -9999em;
+        background: url(http://www.kera.io/assets/marketing2/logo.png) no-repeat 0 50%;
+        display: block;
+      }
+      .marketing_header .marketing_links {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;*zoom:1;
+        float: right;
+        border-left: solid 1px #dddddd;
+      }
+      .marketing_header .marketing_links:before,.marketing_header .marketing_links:after {
+        display: table;
+        content: "";
+        line-height: 0;
+      }
+      .marketing_header .marketing_links:after {
+        clear: both;
+      }
+      .marketing_header .marketing_links>li {
         float: left;
-        margin-right: 24px;
-    }
-    
-    #header_shell #banner {
-        top: 111px;        
-    }
-    
-    #rss {
+      }
+      .marketing_header .marketing_links>li>a {
+        font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+        display: block;
+        position: relative;
+        border-right: solid 1px #dddddd;
+        line-height: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+      }
+      .marketing_header .marketing_links>li>a:link,.marketing_header .marketing_links>li>a:visited {
+        text-transform: uppercase;
+        color: #2284c3;
+        text-decoration: none;
+      }
+      .marketing_header .marketing_links>li>a:link.primary,.marketing_header .marketing_links>li>a:visited.primary {
+        color: #0b9b4b;
+      }
+      .marketing_header .marketing_links>li>a.primary {
+        padding-right: 81px;
+      }
+      .marketing_header .marketing_links>li>a.primary:after {
+        content: '.';
+        text-indent: -9999em;
+        background: url(http://www.kera.io/assets/marketing2/primary_chevron.png);
+        width: 16px;
+        height: 28px;
+        position: absolute;
+        top: 50%;
+        margin-top: -14px;
+        margin-left: 15px;
+      }
+      .marketing_header .marketing_links>li>a:hover {
+        font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+        opacity: 0.75;
+      }
+
+
+      .marketing_social {
+        border-top: solid 1px #dddddd;
+        background: #FFF;*zoom:1;
+      }
+      .marketing_social:before,.marketing_social:after {
+        display: table;
+        content: "";
+        line-height: 0;
+      }
+      .marketing_social:after {
+        clear: both;
+      }
+      .marketing_social .marketing_wrapper {
+        position: relative;
+      }
+      .marketing_social p {
+        float: left;
+        margin: 0;
+      }
+      .marketing_social p.social_signup {
+        position: relative;
+        width: 500px;
+        line-height: 100px;
+      }
+      .marketing_social p.social_signup a {
+        display: block;
+        border-left: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        text-transform: uppercase;
+        color: #0b9b4b;
+        text-indent: 200px;
+      }
+      .marketing_social p.social_signup a .btn {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 150px;
+        background-size: 150px 50px;
+        text-indent: 0;
+      }
+      .marketing_social p.social_facebook,.marketing_social p.social_twitter {
+        width: 250px;
+        position: relative;
+      }
+      .marketing_social p.social_twitter {
+        width: 253px;
+        position: relative;
+      }
+      .marketing_social p.social_facebook .label,.marketing_social p.social_twitter .label {
+        display: block;
+        border-right: solid 1px #dddddd;
+        line-height: 100px;
+        text-indent: -9999em;
+      }
+      .marketing_social p.social_facebook .widget,.marketing_social p.social_twitter .widget {
+        position: absolute;
+        right: 25px;
+        top: 40px;
+      }
+      .marketing_social p.social_facebook {
+        background: url(https://www.kera.io/assets/marketing2/facebook-cc292fe8fd5ab72f2ad3de79a197a6da.png) no-repeat 25px 50%;
+      }
+      .marketing_social p.social_twitter {
+        background: url(https://www.kera.io/assets/marketing2/twitter-bd2ca0f9c4ef6833a88bf6454b474508.png) no-repeat 25px 50%;
+      }
+
+
+
+      .marketing_footer {
+        padding: 25px 0 25px 0;
+        color: #888;
+        background:#464646;
+      }
+      .marketing_footer a {
+        color: #888;
+      }
+      .marketing_footer a:hover {
+        color: #f8b52c;
+      }
+      .marketing_footer p {
+        margin: 0;
+      }
+      .marketing_footer ul {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      .marketing_footer .legal {
+        float: left;
+        width: 400px;
+      }
+      .marketing_footer .legal p {
+        margin: 0 25px 20px 25px;
+      }
+      .marketing_footer .legal p.marketing_footer_links a {
+        padding: 0 20px 0 0;
+      }
+      .marketing_footer .sitemap {
+        position: relative;
+        float: left;
+        width: 600px;*zoom:1;
+      }
+      .marketing_footer .sitemap:before,.marketing_footer .sitemap:after {
+        display: table;
+        content: "";
+        line-height: 0;
+      }
+      .marketing_footer .sitemap:after {
+        clear: both;
+      }
+      .marketing_footer .sitemap ul li {
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+      }
+      .marketing_footer .sitemap ul li strong {
+        display: block;
+        text-transform: uppercase;
+      }
+      .marketing_footer .sitemap ul.footer_blog_entries li a {
+        display: block;
+        border-bottom: 1px solid #888;
+        padding: 10px 0;
+      }
+      .marketing_footer .sitemap ul.footer_blog_entries li strong a {
+        padding: 0 0 10px 0;
+      }
+      .marketing_footer .sitemap .mixpanel {
+        padding: 25px 0;
+        clear: both;
+      }
+
+      /* Opa Blogging Style */
+
+      #blog_sidebar {
+        width: 274px;
+        float:right;
+        background:#fff;
+        border: none;
+        border-right: 1px solid #ddd;
+        clear:both;
+        padding: 0;
+        padding-bottom:9999px;
+        margin-bottom:-9999px;
+      }
+        #blog_sidebar li {
+          border-bottom: 1px solid #ddd;
+        }
+          #blog_sidebar li:last-child {
+            border-bottom: none;
+          }
+        #blog_sidebar #rss {
+          height: 40px;
+          width: 220px;
+          margin: 22px auto;
+        }
+          #blog_sidebar #rss .share-rss {
+            background-image: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
+            background-repeat: no-repeat;
+            background-position: -187px -12px;
+            height: 40px;
+            width: 25px;
+            float:left;
+            margin: -5px 5px 0 0px;
+          }
+          #blog_sidebar #rss p {
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-left: 42px;
+          }
+        #blog_sidebar #email {
+            height: 170px;
+            width: 220px;
+            margin: 0 auto;
+          }
+          #blog_sidebar #email .share-email {
+              background-image: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
+              background-repeat: no-repeat;
+              background-position: -27px -365px;
+              height: 40px;
+              width: 25px;
+              display: block;
+              float:left;
+              margin: -5px 5px 0 0px;
+          }
+          #blog_sidebar #email p {
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #2284c3;
+            margin-left: 42px;
+          }
+          #blog_sidebar #email input[type=text] {
+            border: 1px solid #ddd;
+            height: 25px;
+            width: 196px;
+            margin-bottom: 20px;
+            padding: 10px 10px 10px 12px;
+            color: #2284c3;
+            font-size: 18px;
+          }
+          #blog_sidebar #email input[type=submit] {
+            border: none;
+            height: 40px;
+            width: 100%;
+            margin: 0;
+            padding: 10px;
+            color: #fff;
+            font-size: 18px;
+            background: #2284c3;
+          }
+            #blog_sidebar #email input[type=submit]:hover {
+              opacity: 0.75;
+            }
+        #blog_sidebar #social {
+          height: 70px;
+          width: 220px;
+          margin: 0 0 22px 16px;
+
+        }
+          #blog_sidebar #social .share-button {
+            background: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
+            height: 70px;
+            width: 53px;
+            float:left;
+          }
+            #blog_sidebar #social .share-twitter {
+                background-position: -92px -140px;
+            }
+            #blog_sidebar #social .share-facebook {
+                background-position: -92px -70px;
+            }
+            #blog_sidebar #social .share-linkedin {
+                background-position: -92px -210px;
+            }
+            #blog_sidebar #social .share-google {
+                background-position: -92px -280px;
+            }      
+
+
+      ol#posts {
+          background: none;
+          padding: 0;
+          padding-top: 50px;
+          width: 725px;
+          margin: 0px;
+          margin-left: 0px;
+      }
+
+      ol#posts li.post {
+        background:#fff;
+        width: 674px;
+        padding: 62px 0px 40px 0px;
+        margin: 0px 0px 50px 0px;
+        border: 1px solid #ddd;
+      }
+      ol#posts li .post-content img,
+      ol#posts li .post-content .video-wrapper,
+      ol#posts li .post-content .album {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        vertical-align: bottom;
+      }
+        ol#posts li .post-content p {
+          margin: 30px 75px 0 75px;
+          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          color: #666666;
+        }  
+          ol#posts li .post-content h1 {
+            font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+            font-size: 33px;
+            font-weight: lighter;
+            text-align: center;
+            line-height: 40px;
+            margin: 0px 100px;
+          }
+            ol#posts li .post-content h1 a {
+              color: #2694D0;
+            }
+            ol#posts li .post-content h1 a:hover {
+              color: #F05247;
+            }
+          ol#posts li .post-content p strong {
+            font: 19px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+            font-weight: bold;
+          }
+          ol#posts li .post-content p a {
+            color: #2694D0;
+          }
+          ol#posts li .post-content p a:hover {
+            color: #F05247;
+          }
+
+        ol#posts li .post-content ol {
+          list-style-type:decimal;
+          margin: 30px 125px 0 125px;
+          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          color: #666666;    
+        }
+          ol#posts li .post-content ol li {
+            padding-left:25px;
+          }
+            ol#posts li .post-content ol li a {
+              color: #2694D0;
+            }
+              ol#posts li .post-content ol li a:hover {
+                color: #F05247;
+              }
+        ol#posts li .post-content ul {
+          list-style-type: disc;
+          margin: 30px 125px 0 118px;
+          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          color: #666666;
+        }
+          ol#posts li .post-content ul li {
+            padding-left:25px;
+          }
+            ol#posts li .post-content ul li a {
+              color: #2694D0;
+            }
+              ol#posts li .post-content ul li a:hover {
+                color: #F05247;
+              }
+        ol#posts li .post-content img {
+          width: 100%;
+        }
+        ol#posts li .post-content .video {
+          margin: 25px 25px 0px 25px;
+        }
+        ol#posts li .post-content .text iframe {
+          
+        }
+          .text .fluid-width-video-wrapper {
+            margin: 20px 0;
+          }
+        ol#posts li .post-content pre {
+            margin: 20px 75px
+        }
+        ol#posts li .post-content blockquote, ol#posts li .post-content blockquote p {
+          margin: 30px 50px 0 50px;
+          font: normal normal 18px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          font-style: italic;
+          color: #666666;      
+          }
+
+        ol#posts li ul.tags {
+          display:block;
+          height: 20px;
+          width: 300px;
+          margin: 0 auto;
+        }
+          ol#posts li ul.tags li {
+            float: left;
+            padding-right: 5px;
+          }
+          ol#posts li ul.tags li:after {
+            content: ", ";
+          }
+          ol#posts li ul.tags li:last-child {
+            
+          }       
+          ol#posts li ul.tags li:last-child:after {
+            content: "";
+          }
+          ol#postst li .post-content .tags ul a {
+          text-align:center;
+          list-style-type: none;
+          margin: 30px 125px 0 118px;
+          font: normal normal 19px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          color: #666666;
+          border: 1px solid red;
+          }        
+
+        ol#posts li .post-data p {
+          margin: 30px auto;
+          text-align: center;
+          text-transform: uppercase;
+          font: normal normal 14px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        }
+
+     
+      /* video post */
+              
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+      
+      .video-wrapper iframe,  
+      .video-wrapper object,  
+      .video-wrapper embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+
+      /* Sharing */
+
+        ol#posts li .post-sharing {
+            background: #fff;
+            position: relative;
+            border-top: 1px solid #DDD;
+            padding: 0px 0 0px 0;
+            margin: 20px 75px 5px 75px;
+            height: 70px;
+            text-align:center;
+          }
+          
+          .post-sharing .share-button {
+            background: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
+            position: absolute;
+            height: 70px;
+            width: 80px;
+            top: 20px;
+          }
+           .post-sharing .share-twitter {
+            background-position: -160px -140px;
+            left: 75px;
+          }
+            .post-sharing .share-twitter:hover {
+              background-position: -80px -140px;
+            }
+          .post-sharing .share-facebook {
+            background-position: -160px -70px;
+            left: 155px;      
+          }
+            .post-sharing .share-facebook:hover {
+              background-position: -80px -70px;
+            }
+          
+          .post-sharing .share-linkedin {
+            background-position: -160px -210px;
+            left: 230px;      
+          }
+            .post-sharing .share-linkedin:hover {
+              background-position: -80px -210px;
+            }
+
+          .post-sharing .share-google {
+            background-position: -160px -280px;
+            left: 305px;
+          }
+            .post-sharing .share-google:hover {
+              background-position: -80px -280px;
+            }
+          .post-sharing .share-email {
+            background-position: -160px -350px;
+            left: 380px;
+          }
+            .post-sharing .share-email:hover {
+              background-position: -80px -350px;
+            }
+          .sharing-frames {
+            background: #fff;
+            position: relative;
+            margin: 20px auto 0 auto;
+            height: 30px;
+            text-align:center;
+            width: 400px;
+          }
+            .sharing-frames .twitter-frame, .facebook-frame, .linkedin-frame, .google-frame, .email-frame{
+              top: 20px;
+              height: 25px;
+              width: 80px;
+              position: absolute;
+            }
+              .sharing-frames .twitter-frame{
+                top: -5px;
+                left: 10px;
+              }
+              .sharing-frames .facebook-frame{
+                top: -7px;
+                left: 90px; 
+              }
+              .sharing-frames .linkedin-frame{
+                top: -5px;
+                left: 160px;
+                width: 100px;
+              }
+              .sharing-frames .google-frame{
+                top: -5px;
+                left: 240px;
+              }
+              .sharing-frames .email-frame {
+                top: -7px;              
+                left: 320px;
+              }
+
+        ol#posts #comments {
+        background:#fff;
+        width: 574px;
+        padding: 50px 50px 20px 50px;
+        margin: 0px 0px 50px 0px;
+        border: 1px solid #ddd;
+        }
+
+      #tmblr .marketing_wrapper #nav {
+        background:#fff;
+        width: 674px;
+        padding: 20px 0px 25px 0px;
+        margin: 0px 0px 50px 0px;
+        border: 1px solid #ddd;
+        text-align: center;
+        font-family: 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+        font-size: 28px;
+        font-weight: lighter;
+        line-height: 40px;
+      }
+        #tmblr .marketing_wrapper #nav a  {
+          padding-left: 10px;
+        }
+        #tmblr .marketing_wrapper #nav a, #tmblr .marketing_wrapper #nav span  { 
+         }
+
+    #banner {
       display: block;
-      position: absolute;
-      background: #FFF;
-      width: 265px;
-      height: 25px;
-      top: 521px;
+      width: 234px;
+      height: 350px;
+      top: 82px;
       right: 19px;
-      border: 1px solid #DDD;
-      padding: 10px;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      background: #FFF url(http://kera.io/assets/KERA-blog_banner.png) no-repeat 100% 100%;
+      font-size: 30px
     }
-    
-    #rss #rss-label {
-      font: normal 600 14px/22px 'Helvetica Neue', Helvetica, Arial;
-      color: #666666;
-      padding: 2px 0 0 0;
-      text-indent: 3px;
-    }
+      #banner p {
+        font-size: 22px
+      }
+
   </style>
 
-  <link rel="stylesheet" href="http://kera.io/assets/blog.css" type="text/css" media="screen" charset="utf-8">
+<!--[if IE 9]>
+  <style type="text/css">
+      
+      #blog_sidebar #social {
+        margin-top: 25px;
+      }
+      #posts .text iframe {
+        margin-left:-57px; 
+      }
+  </style>
+<![endif]-->
+
+  <script type="text/javascript" src="https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".text").fitVids();
+    });
+  </script>
+  
+  <script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?cce02fd0a15b0a4373013178e6c56abc"></script>
+
+  <meta http-equiv="x-dns-prefetch-control" content="off"/>
+
 </head>
 
 <body>
@@ -403,409 +1250,705 @@
   
   <div id="tmblr" class="container">
 
-    <div class="header">  
-      <div id="header_shell">
-        <a href="http://kera.io" class="brand">Kera</a>
-        <ul>
-          <li><a href="http://kera.io/auth/google_oauth2" id="login_link">Login</a></li>
-          <li><a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6F;&#x72;&#x74;&#x40;&#x6B;&#x65;&#x72;&#x61;&#x2E;&#x69;&#x6F" id="contact_link">Contact</a></li>
-          <li><a href="http://kera.mytribehr.com/careers" id="careers_link">Careers</a></li>
-          <li><a href="http://blog.kera.io" id="blog_link">Blog</a></li>
-          <li><a href="http://kera.io/pricing" id="pricing_link">Pricing &amp; Signup</a></li>
-        </ul>        
-        
-        <div id="social">
-                <fb:like href="http://facebook.com/keraproject" send="true" layout="button_count" width="42" show_faces="false" font="arial" id="facebook-widget"></fb:like>
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=389742301057307";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+    <header class="marketing_header">
+      <div class="marketing_wrapper">
+        <a href="http://kera.io/" class="logo">Kera</a>
 
-        <a href="https://twitter.com/keraproject" class="twitter-follow-button" id="twitter-follow-button" data-show-count="false">Follow @keraproject</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-        </div>
-        <a href="http://kera.io" id="banner">
-          <p>Learn more about the world's first <strong>Customer Success<br>Platform</strong></p>
-        </a>
-        
-        <div id="rss"><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;&nbsp;<a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></div>
-        
+        <ul class="marketing_links">
+          <li class="grid_button"><a href="http://blog.kera.io">Blog</a></li>
+          <li class="grid_button"><a href="http://kera.io/pricing">Pricing</a></li>
+          <li class="grid_button"><a href="http://kera.io/auth/google_oauth2">Login</a></li>
+          <li class="grid_button"><a href="http://kera.io/pricing" class="primary">Signup</a></li>
+        </ul>
       </div>
-    </div>
-    
-    {block:TagPage}
-    <h1 class="tagged-title">#{Tag}</h1>
-    {/block:TagPage}
-        
-    <ol id="posts">
-    {block:Posts}
-      {block:Text}
-      <li class="post text">
+    </header>
 
-        <ul class="post-data">
-          {block:IfTextIconImage}<li class="icon"></li>{/block:IfTextIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+    <div class="marketing_wrapper">
+
+        <ul id="blog_sidebar">
+          <li>
+            <div id="rss">
+              <span class="share-rss"></span><p><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></p>
+            </div>
+
+            <div id="email">
+              <form style="" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=kerablog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+                <div><span class="share-email"></span><p>Subscribe with Email</p></div>
+                <input type="text" name="email" value=""/>
+                <input type="hidden" value="kerablog" name="uri"/>
+                <input type="hidden" name="loc" value="en_US"/>
+                <input type="submit" value="Subscribe" />
+              </form>
+            </div>
+            <div id="social">
+              <a class="share-button share-twitter" href="http://twitter.com/keraproject" alt="Follow @keraproject">
+              </a>
+              <a class="share-button share-facebook" href="https://www.facebook.com/keraproject">
+              </a>
+              <a class="share-button share-linkedin" href="http://www.linkedin.com/company/2697869">
+              </a>
+              <a class="share-button share-google" href="https://plus.google.com/u/0/115380801038755793987/">
+              </a>
+            </div>
+          </li>
+          <li>
+            <a href="http://kera.io" id="banner">
+              <p>Learn more about the world's first <br> <strong>Customer Success<br>Platform</strong></p>
+            </a>
+          </li>
         </ul>
+      
+        <ol id="posts">
+                  
+     {block:Posts}
+
+        {block:Text}
+        <li class="post text">
+            
+          <div class="post-content">
+          {block:Title}
+            <h1><a href="{Permalink}">{Title}</a></h1>
+          {/block:Title}
+          <p>{Body}</p>
+          </div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>                  
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                <a href="mailto:?&subject={Title}&body=Check%20out%20this%20link:%20{Permalink}">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>   
+        {/block:Text}
+        
+        
+        {block:Photo}
+        <li class="post photo">
+                      
+          <div class="post-content">
+            <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}
+            </div>
+            {block:Caption}
+            <div class="caption">{Caption}
+            </div>{/block:Caption}
+          </div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Photo}
+
+        
+        {block:Photoset}
+        <li class="post photoset">
           
-        <div class="post-content">
-        {block:Title}
-          <h1><a href="{Permalink}">{Title}</a></h1>
-        {/block:Title}
-        <p>{Body}</p>
-        </div>
-        
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
+          <div class="post-content">
+            {Photoset-250}
+            {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          </div>
 
-        <div class="post-sharing">
-          <div class="share-button share-twitter">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            {block:HasTags}
+            <ul class="tags">
+              {block:Tags}
+              <li><a href="{TagURL}">{Tag}</a></li> 
+              {/block:Tags}
+            </ul>
+            {/block:HasTags}
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>            
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Photoset}
+
+        {block:Quote}
+        <li class="post quote">
+
+          <div class="post-content">
+            <h1>{Quote}</h1>
+            {block:Source}<div class="source">{Source}</div>{/block:Source}
           </div>
-          <div class="share-button share-facebook">
-            <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Quote}
+        
+        {block:Link}
+        <li class="post link">
+          
+          <div class="post-content">
+            <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
+            {block:Description}<div class="caption">{Description}</div>{/block:Description}
           </div>
-          <div class="share-button share-linkedin">
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-            <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Link}
+        
+        {block:Chat}
+        <li class="post chat">
+          
+          <div class="post-content">
+            {block:Title}
+            <h1>{Title}</h1>
+            {/block:Title}
+            
+            <ul>
+            {block:Lines}
+              <li class="{Alt} user_{UserNumber}">
+                {block:Label}<span class="label">{Label} </span>{/block:Label}{Line}
+              </li>
+            {/block:Lines}
+            </ul>
           </div>
-          <div class="share-button share-google">
-            <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Chat}
+        
+        {block:Video}
+        <li class="post video">
+          
+          <div class="post-content">
+            <div class="video-wrapper">
+              {Video-500}
+            </div>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          </div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Video}
+        
+        {block:Audio}
+        <li class="post audio">
+          
+          <div class="post-content">
+           
+           <ul class="album-details">
+            <li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
+            <li>{block:Artist}By {Artist}{/block:Artist}</li>
+           </ul><!--album-details close-->
+            
+           <div class="album">
+             {block:AlbumArt}
+              <img src="{AlbumArtURL}"/ >
+             {/block:AlbumArt}
+             {AudioPlayerGrey}
+           </div>
+           {block:AudioEmbed}
+           
+           <div class="spotify-500">
+             {AudioEmbed-500}
+           </div>
+           
+           <div class="spotify-400">
+             {AudioEmbed-400}
+           </div>
+           
+           <div class="spotify-250">
+             {AudioEmbed-250}
+           </div>
+          
+            {/block:AudioEmbed}
+            <div class="caption">
+              {block:Caption}{Caption}{/block:Caption}
+            </div>
+          </div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+          
+        </li>
+        {/block:Audio}
+        
+        {block:Answer}
+        <li class="post answer">
+          
+          <div class="post-content">
+            <h1>{Asker} asks:</h1>
+            <p>{Question}</p>
+            <blockquote >{Answer}</blockquote>
+          </div>
+
+            <div class="post-data">
+              <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
+            </div>
+
+            <div class="post-sharing">
+              <a class="share-button share-twitter">
+              </a>
+              <a class="share-button share-facebook">
+              </a>
+              <a class="share-button share-linkedin">
+              </a>
+              <a class="share-button share-google">
+              </a>
+              <a class="share-button share-email">               
+              </a>
+            </div>
+            
+            <div class="sharing-frames">
+              <div class="frames twitter-frame">
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+              </div>
+              <div class="frames facebook-frame">
+                  <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </div>
+              <div class="frames linkedin-frame">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                  <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+              </div>
+              <div class="frames google-frame">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </div>
+              <div class="frames email-frame">
+                  <a href="">Email &raquo;</a>
+              </div>
+            </div>
+
+        </li>
+        {/block:Answer}
+
+      {/block:Posts}
+          
+          {block:PermalinkPage}
+
+          <div id="comments">
+            <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
             <script type="text/javascript">
+              /**
+            * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
+            */
               (function() {
-                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                po.src = 'https://apis.google.com/js/plusone.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = 'http://keraproject.disqus.com/embed.js';
+               (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
               })();
             </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=keraproject">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            {/block:Permalink}<script type="text/javascript">
+            var disqus_shortname = 'keraproject';
+            (function () {
+              var s = document.createElement('script'); s.async = true;
+              s.src = 'http://keraproject.disqus.com/count.js';
+              (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+            }());
+            </script>
           </div>
+
+          {/block:PermalinkPage}
+          
+        </ol><!--posts close-->
+
+        {block:Pagination}
+        <div id="nav">
+            {block:PreviousPage}
+                <a href="{PreviousPage}">Previous</a>
+            {/block:PreviousPage}
+
+            {block:JumpPagination length="5"}
+                {block:CurrentPage}
+                    <span class="current_page">{PageNumber}</span>
+                {/block:CurrentPage}
+
+                {block:JumpPage}
+                    <a class="jump_page" href="{URL}">{PageNumber}</a>
+                {/block:JumpPage}
+            {/block:JumpPagination}
+
+            {block:NextPage}
+                <a href="{NextPage}">Next</a>
+            {/block:NextPage}
+        </div><!--nav close-->
+        {/block:Pagination}
+    
+    </div> <!--wrapper close-->
+
+
+    <div class="marketing_social">
+      <div class="marketing_wrapper">
+        <p class="social_signup">
+          <a href="http://kera.io/pricing">
+            <span class="btn btn_primary">Sign up</span> Try Kera free for a month
+          </a>
+        </p>
+        <p class="social_facebook">
+          <span class="label">Facebook</span>
+          <span class="widget"><fb:like href="http://facebook.com/keraproject" send="true" layout="button_count" width="42" show_faces="false" font="arial" id="facebook-widget"></fb:like>
+         </span>
+        </p>
+        <p class="social_twitter">
+         <span class="label">Twitter</span>
+         <span class="widget"><a href="https://twitter.com/keraproject" class="twitter-follow-button" id="twitter-follow-button" data-show-count="false">Follow @keraproject</a>          
+         </span>
+        </p>
+      </div>
+    </div>
+
+    <footer class="marketing_footer">
+      <div class="marketing_wrapper">
+        <div class="legal">
+          <p>&copy; 2013, All rights reserved.</p>
+          <p class="marketing_footer_links"><a href="http://kera.io/privacy">Privacy Policy</a> <a href="http://kera.io/terms">Terms of Service</a> <a href="http://status.kera.io">Status</a></p>
+          <p>
+            Kera Software Inc. <br />
+            Toronto, Ontario<br />
+            Canada
+          </p>
+          <p>
+            <a href="mailto:&#x73;&#x75;&#x70;&#x70;&#x6F;&#x72;&#x74;&#x40;&#x6B;&#x65;&#x72;&#x61;&#x2E;&#x69;&#x6F;">support@kera.io</a><br />
+            (647) 892-8180
+          </p>
         </div>
 
-    
-    <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div>
+        <div class="sitemap">
+
+          <ul class="footer_blog_entries">
+            <li><strong><a href="http://blog.kera.io">Recent Blog Posts</a></strong></li>
+            <li><a href="http://blog.kera.io/post/40920774387/web-apps-onboarding-how-to-treat-your-new-users">Web Apps Onboarding: How to Treat Your New Users</a></li>
+            <li><a href="http://blog.kera.io/post/40686954483/how-to-fix-a-crappy-conversion-rate">How To Fix a Crappy Conversion Rate</a></li>
+            <li><a href="http://blog.kera.io/post/40192110962/getting-professional-audio-for-your-videos-and">Getting Professional Audio For Your Videos and Tutorials</a></li>
+          </ul>
+
+          <div class="mixpanel">
+            <a href="https://mixpanel.com/f/partner"><img src="https://mixpanel.com/site_media/images/partner/badge_light.png" alt="Mobile and Web Analytics" /></a>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div><!--container and tumlbr close-->
+
+  <!-- Various Embed Cods -->
+
+    <!-- Google+ -->
+
     <script type="text/javascript">
-      /**
-    * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
-    */
       (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://keraproject.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
     </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=keraproject">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-    {/block:Permalink}<script type="text/javascript">
-    var disqus_shortname = 'keraproject';
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.src = 'http://keraproject.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
+
+    <!-- Twitter -->
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+    <!-- Google Analytics -->
+
+     <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-30783814-1']);
+      _gaq.push(['_setDomainName', 'kera.io']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+      </script>
+
+    <!-- MixPanel -->      
+      
+      <script type="text/javascript">
+        (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");
+        b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+        '//cdn.mxpnl.com/libs/mixpanel-2.1.min.js';d=c.getElementsByTagName("script")[0];
+        d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){
+        var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
+        Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
+        f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
+        'track_forms','register','register_once','unregister','identify','name_tag',
+        'set_config','people.identify','people.set','people.increment'];for(e=0;e<h.length;e++)d(g,h[e]);
+        a._i.push([b,c,f])};a.__SV=1.1;})(document,window.mixpanel||[]);
+        mixpanel.init("8de07f4dead70bc636351ce822305744");
     </script>
-    
-    
-      </li>
 
-
-    
-      {/block:Text}
+    <script>
+      mixpanel.register_once({ 'Campaign Type': 'SEO', 'Campaign Name': 'Blog',
+      'Blog Post Path': window.location.pathname  
+      });  
       
-      {block:Photo}
-      <li class="post photo">
-          
-          <ul class="post-data">
-            {block:IfPhotoIconImage}<li class="icon"></li>{/block:IfPhotoIconImage}
-            <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-          </ul>
-          
-        <div class="post-content">
-        <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}</div>
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-        
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}             
-      </li>
-      {/block:Photo}
-      
-      {block:Photoset}
-      <li class="post photoset">
-
-        <ul class="post-data">
-          {block:IfPhotoIconImage}<li class="icon"></li>{/block:IfPhotoIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-          {Photoset-250}
-          {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-  
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
-        
-      </li>
-      {/block:Photoset}
-
-      {block:Quote}
-      <li class="post quote">
-
-        <ul class="post-data">
-          {block:IfQuoteIconImage}<li class="icon"></li>{/block:IfQuoteIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        <div class="post-content">
-          <h1>{Quote}</h1>
-          {block:Source}<div class="source">{Source}</div>{/block:Source}
-        </div>
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
-      </li>
-      {/block:Quote}
-      
-      {block:Link}
-      <li class="post link">
-
-        <ul class="post-data">
-          {block:IfLinkIconImage}<li class="icon"></li>{/block:IfLinkIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-          <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
-          {block:Description}<div class="caption">{Description}</div>{/block:Description}
-        </div>
-                        
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
-                        
-      </li>
-      {/block:Link}
-      
-      {block:Chat}
-      <li class="post chat">
-
-        <ul class="post-data">
-          {block:IfChatIconImage}<li class="icon"></li>{/block:IfChatIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-        {block:Title}
-        <h1>{Title}</h1>
-        {/block:Title}
-        
-        <ul>
-        {block:Lines}
-          <li class="{Alt} user_{UserNumber}">
-            {block:Label}<span class="label">{Label} </span>{/block:Label}{Line}
-          </li>
-        {/block:Lines}
-        </ul>
-        </div>
-                        
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}   
-                                             
-      </li>
-      {/block:Chat}
-      
-      {block:Video}
-      <li class="post video">
-
-        <ul class="post-data">
-          {block:IfVideoIconImage}<li class="icon"></li>{/block:IfVideoIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-        <div class="video-wrapper">
-          {Video-500}
-        </div>
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-                      
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}                        
-      </li>
-      {/block:Video}
-      
-      {block:Audio}
-      <li class="post audio">
-
-        <ul class="post-data">
-          {block:IfAudioIconImage}<li class="icon"></li>{/block:IfAudioIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-         
-         <ul class="album-details">
-          <li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
-          <li>{block:Artist}By {Artist}{/block:Artist}</li>
-         </ul><!--album-details close-->
-          
-         <div class="album">
-         {block:AlbumArt}
-          <img src="{AlbumArtURL}"/ >
-         {/block:AlbumArt}
-         {AudioPlayerGrey}
-         </div>
-         {block:AudioEmbed}
-         <div class="spotify-500">
-           {AudioEmbed-500}
-         </div>
-         <div class="spotify-400">
-           {AudioEmbed-400}
-         </div>
-         <div class="spotify-250">
-           {AudioEmbed-250}
-         </div>
-         {/block:AudioEmbed}
-         <div class="caption">{block:Caption}{Caption}{/block:Caption}</div>
-        </div>
-                      
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
-                                
-      </li>
-      {/block:Audio}
-      
-      {block:Answer}
-      <li class="post answer">
-
-        <ul class="post-data">
-          {block:IfTextIconImage}<li class="icon"></li>{/block:IfTextIconImage}
-          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
-        </ul>
-        
-        <div class="post-content">
-          <h1>{Asker} asks:</h1>
-          <p>{Question}</p>
-          <blockquote >{Answer}</blockquote>
-        </div>
-        
-
-
-        {block:HasTags}
-        <ul class="tags">
-          {block:Tags}
-          <li><a href="{TagURL}">{Tag}</a></li> 
-          {/block:Tags}
-        </ul>
-        {/block:HasTags}
-
-      </li>
-      {/block:Answer}
-
-
-                
-    {/block:Posts}
-
-
-
-
-    </ol><!--posts close-->
-
-    <div id="nav">
-      {block:NextPage}
-        <a class="older" href="{NextPage}">Older</a>
-      {/block:NextPage}
-        
-      <div class="counter"><p>{CurrentPage} of {TotalPages}</p></div>
-      
-      {block:PreviousPage}
-        <a class="newer" href="{PreviousPage}">Newer</a>
-      {/block:PreviousPage}   
-    </div><!--nav close-->
-    
-  </div><!--container and tumlbr close-->
-    
-  <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-30783814-1']);
-  _gaq.push(['_setDomainName', 'kera.io']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  </script>
-  
-  <script type="text/javascript">
-    (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");
-    b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
-    '//cdn.mxpnl.com/libs/mixpanel-2.1.min.js';d=c.getElementsByTagName("script")[0];
-    d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){
-    var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
-    Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
-    f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
-    'track_forms','register','register_once','unregister','identify','name_tag',
-    'set_config','people.identify','people.set','people.increment'];for(e=0;e<h.length;e++)d(g,h[e]);
-    a._i.push([b,c,f])};a.__SV=1.1;})(document,window.mixpanel||[]);
-    mixpanel.init("8de07f4dead70bc636351ce822305744");
-</script>
-
-<script>
-  mixpanel.register_once({ 'Campaign Type': 'SEO', 'Campaign Name': 'Blog',
-  'Blog Post Path': window.location.pathname  
-  });  
-  
-  mixpanel.track('Marketing Page View');
-</script>
+      mixpanel.track('Marketing Page View');
+    </script>
 
 </body>
 
