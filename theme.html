@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
+  
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    
+      {block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"/>
+  
+    <meta name="image:Text Icon" content=""/>
+    <meta name="image:Video Icon" content=""/>
+    <meta name="image:Photo Icon" content=""/>
+    <meta name="image:Quote Icon" content=""/>
+    <meta name="image:Link Icon" content=""/>
+    <meta name="image:Chat Icon" content=""/>
+    <meta name="image:Audio Icon" content=""/>
+    
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+
+  <style type="text/css">
+    /*///////////////////////////////////////// css reset /////////////////////////////////////////*/
+    
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font: inherit;
+      font-size: 100%;
+      vertical-align: baseline; }
+    
+    body {
+      line-height: 1.5em; }
+    
+    ol, ul {
+      list-style: none; }
+    
+    blockquote, q {
+      quotes: none; }
+    
+    /* removes fuzzy blue outline for :focus in webkit */
+    *:focus {
+      outline: none; }
+        
+    /*///////////////////////////////////////////////// global styles ///////////////////////////////////////////////*/
+    
+    * {
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    pre {
+        font-family: Monaco, Courier New;
+        font-size: 11px;
+        width: 100%;
+        display: block;
+        overflow-x: scroll;
+    }
+    
+    blockquote {
+        margin: 0 0 16px 10px;
+        padding: 5px 20px;
+        border-left: 3px solid #DDD;
+        font: normal 300 18px/26px 'Helvetica Neue', Helvetica, Arial;
+        color: #707070;
+    }
+    
+    .icon {
+    	background-repeat: no-repeat;
+    	background-size: 24px 24px;
+    	height: 24px;
+    	width: 24px;
+    	margin-right: 8px;
+    	float: left;
+    	position: relative;
+    	top: -2px;
+    }
+    	
+    .post-content img,
+    .video-wrapper,
+    .album {
+    	display: block;
+    	margin: 0 auto;
+    	max-width: 100%;
+    	vertical-align: bottom;
+    }
+    
+    .post-content .caption {
+    	font-size: 1.125em;
+    	margin: .5em 0 0 0;
+    }
+    		
+    .read_more_container {
+    	margin-bottom: 0;
+    }
+    
+    .tags {
+      display: none;
+    	clear: both;
+    }
+    
+    .notes {
+    	position: relative;
+    	top: -64px;
+    	font-size: .875em;
+    }
+    	
+    .notes li {
+    	padding: .25em;
+    }
+    		
+    .notes .note a {
+    	border-bottom: none;
+    	margin-right: 2px;
+    }
+    
+    .notes .note a img {
+    	vertical-align: middle;
+    }
+    	
+    .note .action a {
+    	border-bottom: 1px solid rgba(0,0,0,.17);
+    }
+    
+    .note .action a:hover {
+      color: #000;
+    }
+      
+     #footer {
+    	font-size: .75em;
+    	line-height: 1.5em;
+    	padding: 48px 0;
+    }
+    
+    /* text post */
+    
+    .text .icon {
+    	background-image: url("{image:Text Icon}"); 
+    }
+    	
+    .text .tags {
+    	padding-top: .125em;
+    }
+    	  	
+    /* photo post */
+    
+    .photo .icon {
+    	background-image: url("{image:Photo Icon}"); 
+    }
+    	
+    .content-img-wrapper {
+    	display: block;
+    	width: 100%;
+    	margin: 0 auto;
+    }
+    
+    /* photoset post */
+    
+    .photoset .icon {
+    	background-image: url("{image:Photo Icon}"); 
+    }
+    		
+    div[id^="photoset"] {
+    	display: none;
+    }
+    
+    .photoset .indv-caption {
+    	font-size: .875em;
+    	line-height: 2.5em;
+    	margin: 0 0 1px 0;
+    	font-style: italic;
+    }
+    		
+    /* video post */
+    
+    .video .icon {
+    	background-image: url("{image:Video Icon}"); 
+    }
+    		
+    .video-wrapper {
+    	position: relative;
+    	padding-bottom: 56.25%;
+    	height: 0;
+    }
+    
+    .video-wrapper iframe,  
+    .video-wrapper object,  
+    .video-wrapper embed {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    }
+    
+    /* audio post */
+    
+    .audio .icon {
+    	background-image: url("{image:Audio Icon}"); 
+    }
+    	
+    .album-details h1 {
+    	padding-bottom: 8px;
+    	border-bottom: 1px solid rgba(0,0,0,.25);
+    	margin-bottom: 4px;
+    }
+    
+    .album-details li {
+    	display: inline;
+    	font-size: .875em;
+    }
+    	
+    .album {
+    	margin-top: 24px;
+    	background: transparent;
+    }
+    
+    .album img {
+    	-webkit-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
+    	-moz-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
+    	-o-box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
+    	box-shadow: 0 5px 8px -2px rgba(0, 0, 0, 0.1);
+    	border-top: 1px solid rgba(0,0,0,.05);
+    	border-right: 1px solid rgba(0,0,0,.05);
+    	border-left: 1px solid rgba(0,0,0,.05);
+    }
+    	
+    .audio_player {
+    	padding: 12px 0 0 4px;
+    	background: #e4e4e4;
+    }
+    
+    .audio .caption {
+    	margin-top: 24px;
+    }
+    	
+    /* chat post */
+    
+    .chat .icon {
+    	background-image: url("{image:Chat Icon}"); 
+    }
+    	
+    .chat h1 {
+    	margin: 8px 0;
+    }
+    	
+    .chat .post-content ul {
+    	margin: 1em 0 2em 0;
+    	border-top: 2px dotted rgba(0,0,0,.07);
+    }
+    
+    .chat .label {
+    	font-weight: bold;
+    }
+    
+    .chat .post-content li {
+    	padding: 16px;
+    	border-bottom: 2px dotted rgba(0,0,0,.07);
+    }
+    		
+    .chat .post-content li.odd {
+    	padding-left: 16px;
+    }
+    
+    .chat .post-content li.even {
+    	padding-left: 32px;
+    }
+    
+    /* quote post */
+    
+    .quote .icon {
+    	background-image: url("{image:Quote Icon}"); 
+    }
+    		
+    .quote .source:before {
+    	content: "\2014\A0";
+    }
+    
+    .quote .source {
+    	margin: 1.125em 0 1.5em 0;
+    	font-size: 1.125em;
+    }
+    
+    /* link post */
+    
+    .link .icon {
+    	background-image: url("{image:Link Icon}"); 
+    }
+    	
+    .link h1 a:link,
+    .link h1 a:visited {
+    	color: {color:Text Color};
+    }
+    
+    .link h1 a:hover,
+    .link h1 a:active {
+    	color: {color:Primary Color};
+    }
+    
+    .post-sharing {
+      position: relative;
+      height: 15px;
+      border-top: 1px solid #DDD;
+      padding: 20px 0 30px 0;
+    }
+    
+    .post-sharing .share-button {
+      position: absolute;
+      width: 100px;
+      top: 20px;
+    }
+    
+    .post-sharing .share-twitter {
+      top: 20px;
+      left: 0;
+    }
+    
+    .post-sharing .share-facebook {
+      top: 19px;
+      left: 90px;
+    }
+    
+    .post-sharing .share-linkedin {
+      left: 180px;
+    }
+    .post-sharing .share-google {
+      left: 287px;
+    }
+    #banner {
+      display: none;
+    }
+    
+    #rss {
+      display: block;
+      position: absolute;
+      background: #FFF;
+      width: 265px;
+      height: 25px;
+      top: 492px;
+      right: 19px;
+      border: 1px solid #DDD;
+      padding: 10px;
+    }
+    
+    #rss #rss-label {
+      font: normal 600 14px/22px 'Helvetica Neue', Helvetica, Arial;
+      color: #666666;
+      padding: 2px 0 0 0;
+      text-indent: 3px;
+    }
+  </style>
+
+  <link rel="stylesheet" href="http://kera.io/assets/blog.css" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<body>
+  
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  
+  <div id="tmblr" class="container">
+
+    <div class="header">	
+      <div id="header_shell">
+        <a href="http://kera.io" class="brand">Kera</a>
+        <ul>
+          <li><a href="http://twitter.com/keraproject" target="_blank" id="twitter_link">@keraproject</a></li>
+          <li><a href="http://blog.kera.io" id="blog_link">Blog<i></i></a><span></span></li>
+          <li><a href="https://docs.google.com/a/kera.io/document/d/1NE504uX18m4O_EiR-y0m0AXGkNqSnGI5Xkq2b-nowkU/edit" target="_blank" id="faq_link">How It Works</a></li>
+          <li><a href="http://kera.io/auth/google_oauth2" id="login_link">Signup / Login</a></li>
+        </ul>
+        
+        <a href="http://kera.io" id="banner">
+          <p>Learn more about the world's first <strong>Customer Success<br>Platform</strong></p>
+        </a>
+        
+        <div id="rss"><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;&nbsp;<a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></div>
+        
+      </div>
+    </div>
+    
+    {block:TagPage}
+    <h1 class="tagged-title">#{Tag}</h1>
+    {/block:TagPage}
+        
+    <ol id="posts">
+    {block:Posts}
+      {block:Text}
+      <li class="post text">
+
+        <ul class="post-data">
+          {block:IfTextIconImage}<li class="icon"></li>{/block:IfTextIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+          
+        <div class="post-content">
+        {block:Title}
+        	<h1><a href="{Permalink}">{Title}</a></h1>
+        {/block:Title}
+        <p>{Body}</p>
+        </div>
+        
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+        
+        <div class="post-sharing">
+          <div class="share-button share-twitter">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          <div class="share-button share-facebook">
+            <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+          </div>
+          <div class="share-button share-linkedin">
+            <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+            <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
+          </div>
+          <div class="share-button share-google">
+            <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+          </div>
+        </div>
+
+      </li>
+      {/block:Text}
+      
+      {block:Photo}
+      <li class="post photo">
+          
+          <ul class="post-data">
+            {block:IfPhotoIconImage}<li class="icon"></li>{/block:IfPhotoIconImage}
+            <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+          </ul>
+          
+        <div class="post-content">
+        <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}</div>
+        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+        
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}             
+      </li>
+      {/block:Photo}
+      
+      {block:Photoset}
+      <li class="post photoset">
+
+        <ul class="post-data">
+          {block:IfPhotoIconImage}<li class="icon"></li>{/block:IfPhotoIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+          {Photoset-250}
+          {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
+  	      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+  
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+        
+      </li>
+      {/block:Photoset}
+
+      {block:Quote}
+      <li class="post quote">
+
+        <ul class="post-data">
+          {block:IfQuoteIconImage}<li class="icon"></li>{/block:IfQuoteIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        <div class="post-content">
+          <h1>{Quote}</h1>
+          {block:Source}<div class="source">{Source}</div>{/block:Source}
+        </div>
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+      </li>
+      {/block:Quote}
+      
+      {block:Link}
+      <li class="post link">
+
+        <ul class="post-data">
+          {block:IfLinkIconImage}<li class="icon"></li>{/block:IfLinkIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+          <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
+          {block:Description}<div class="caption">{Description}</div>{/block:Description}
+        </div>
+                        
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+                        
+      </li>
+      {/block:Link}
+      
+      {block:Chat}
+      <li class="post chat">
+
+        <ul class="post-data">
+          {block:IfChatIconImage}<li class="icon"></li>{/block:IfChatIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+        {block:Title}
+        <h1>{Title}</h1>
+        {/block:Title}
+        
+        <ul>
+        {block:Lines}
+          <li class="{Alt} user_{UserNumber}">
+            {block:Label}<span class="label">{Label} </span>{/block:Label}{Line}
+          </li>
+        {/block:Lines}
+        </ul>
+        </div>
+                        
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}   
+                                             
+      </li>
+      {/block:Chat}
+      
+      {block:Video}
+      <li class="post video">
+
+        <ul class="post-data">
+        	{block:IfVideoIconImage}<li class="icon"></li>{/block:IfVideoIconImage}
+        	<li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+        <div class="video-wrapper">
+        	{Video-500}
+        </div>
+        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+                      
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}                        
+      </li>
+      {/block:Video}
+      
+      {block:Audio}
+      <li class="post audio">
+
+        <ul class="post-data">
+        	{block:IfAudioIconImage}<li class="icon"></li>{/block:IfAudioIconImage}
+        	<li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+         
+         <ul class="album-details">
+         	<li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
+         	<li>{block:Artist}By {Artist}{/block:Artist}</li>
+         </ul><!--album-details close-->
+         	
+         <div class="album">
+         {block:AlbumArt}
+          <img src="{AlbumArtURL}"/ >
+         {/block:AlbumArt}
+         {AudioPlayerGrey}
+         </div>
+         {block:AudioEmbed}
+         <div class="spotify-500">
+           {AudioEmbed-500}
+         </div>
+         <div class="spotify-400">
+           {AudioEmbed-400}
+         </div>
+         <div class="spotify-250">
+           {AudioEmbed-250}
+         </div>
+         {/block:AudioEmbed}
+         <div class="caption">{block:Caption}{Caption}{/block:Caption}</div>
+        </div>
+                      
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+                                
+      </li>
+      {/block:Audio}
+      
+      {block:Answer}
+      <li class="post answer">
+
+        <ul class="post-data">
+          {block:IfTextIconImage}<li class="icon"></li>{/block:IfTextIconImage}
+          <li class="info">{block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}</a></li>
+        </ul>
+        
+        <div class="post-content">
+          <h1>{Asker} asks:</h1>
+          <p>{Question}</p>
+          <blockquote >{Answer}</blockquote>
+        </div>
+        
+        {block:HasTags}
+        <ul class="tags">
+          {block:Tags}
+          <li><a href="{TagURL}">{Tag}</a></li>	
+          {/block:Tags}
+        </ul>
+        {/block:HasTags}
+
+      </li>
+      {/block:Answer}
+                
+    {/block:Posts}
+    </ol><!--posts close-->
+
+    <div id="nav">
+      {block:NextPage}
+      	<a class="older" href="{NextPage}">Older</a>
+      {/block:NextPage}
+      	
+      <div class="counter"><p>{CurrentPage} of {TotalPages}</p></div>
+      
+      {block:PreviousPage}
+      	<a class="newer" href="{PreviousPage}">Newer</a>
+      {/block:PreviousPage}		
+    </div><!--nav close-->
+    
+  </div><!--container and tumlbr close-->
+    
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-30783814-1']);
+  _gaq.push(['_setDomainName', 'kera.io']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+  
+  <script type="text/javascript">
+    (function(c,a){window.mixpanel=a;var b,d,h,e;b=c.createElement("script");
+    b.type="text/javascript";b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+    '//cdn.mxpnl.com/libs/mixpanel-2.1.min.js';d=c.getElementsByTagName("script")[0];
+    d.parentNode.insertBefore(b,d);a._i=[];a.init=function(b,c,f){function d(a,b){
+    var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
+    Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
+    f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
+    'track_forms','register','register_once','unregister','identify','name_tag',
+    'set_config','people.identify','people.set','people.increment'];for(e=0;e<h.length;e++)d(g,h[e]);
+    a._i.push([b,c,f])};a.__SV=1.1;})(document,window.mixpanel||[]);
+    mixpanel.init("8de07f4dead70bc636351ce822305744");
+</script>
+
+<script>
+  mixpanel.register_once({ 'Campaign Type': 'SEO', 'Campaign Name': 'Blog',
+  'Blog Post Path': window.location.pathname  
+  });  
+  
+  mixpanel.track('Marketing Page View');
+</script>
+
+</body>
+
+</html>
