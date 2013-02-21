@@ -1,0 +1,815 @@
+/*/////////////////////////////////////////////////////////////
+  Reset
+/////////////////////////////////////////////////////////////*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font: inherit;
+font-size: 100%;
+vertical-align: baseline; }
+
+body {
+line-height: 1.5em; 
+}
+
+ol, ul {
+list-style: none; }
+
+blockquote, q {
+quotes: none; }
+
+/* removes fuzzy blue outline for :focus in webkit */
+
+*:focus {
+outline: none; }
+  
+/*/////////////////////////////////////////////////////////////
+  Global Styles
+/////////////////////////////////////////////////////////////*/
+
+* {
+}
+
+a {
+text-decoration: none;
+}
+
+/*/////////////////////////////////////////////////////////////
+  Normalise
+/////////////////////////////////////////////////////////////*/
+
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+  HTML5 display definitions
+  ========================================================================== */
+
+/**
+* Correct `block` display not defined in IE 8/9.
+*/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+* Correct `inline-block` display not defined in IE 8/9.
+*/
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+* Prevent modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices.
+*/
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+* Address styling not present in IE 8/9.
+*/
+
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+ Base
+ ========================================================================== */
+
+/**
+* 1. Set default font family to sans-serif.
+* 2. Prevent iOS text size adjust after orientation change, without disabling
+*    user zoom.
+*/
+
+html {
+  font-family: sans-serif; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+* Remove default margin.
+*/
+
+body {
+  margin: 0;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+/* ==========================================================================
+ Links
+ ========================================================================== */
+
+/**
+* Address `outline` inconsistency between Chrome and other browsers.
+*/
+
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+* Improve readability when focused and also mouse hovered in all browsers.
+*/
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+ Typography
+ ========================================================================== */
+
+/**
+* Address variable `h1` font size within `section` and `article` contexts in
+* Firefox 4+, Safari 5, and Chrome.
+*/
+
+h1 {
+	font-size:;
+}
+
+h4 {
+	font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-transform: uppercase;
+	color: #707070;
+}
+
+/**
+* Address styling not present in IE 8/9, Safari 5, and Chrome.
+*/
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+*/
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+* Address styling not present in Safari 5 and Chrome.
+*/
+
+dfn {
+  font-style: italic;
+}
+
+/**
+* Address styling not present in IE 8/9.
+*/
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+* Correct font family set oddly in Safari 5 and Chrome.
+*/
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+* Improve readability of pre-formatted text in all browsers.
+*/
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/**
+* Set consistent quote types.
+*/
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+* Address inconsistent and variable font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/**
+* Prevent `sub` and `sup` affecting `line-height` in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+@font-face{
+  font-family:'MercuryRegular';
+  src:url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-5310d085a5197e6c9f0a32fa52d9328a.eot);
+  src:url(https://www.kera.io/assets/marketing2/mercury_regular-webfont.eot?#iefix) format('embedded-opentype'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-5595aad32fa4d77b9e3fa4c12d1d8d44.woff) format('woff'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont-0fade063ff1733cd7384ad10d103e178.ttf) format('truetype'),url(https://www.kera.io/assets/marketing2/mercury_regular-webfont.svg#MercuryRegular) format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face{
+  font-family:'MercuryMedium';
+  src:url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-a0285da3f13e339573f085c0964a49dd.eot);
+  src:url(https://www.kera.io/assets/marketing2/mercury_medium-webfont.eot?#iefix) format('embedded-opentype'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-35d5aed335f97eea76e898b8a2d7956c.woff) format('woff'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont-d69ec3d8932872198d19f356b9b3f4b0.ttf) format('truetype'),url(https://www.kera.io/assets/marketing2/mercury_medium-webfont.svg#MercuryMedium) format('svg');
+  font-weight:normal;
+  font-style:normal;
+}
+
+
+/* ============================================================
+   Structure
+============================================================ */
+
+body {
+	font: normal normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/T8umhpr3k/background2.png) center 7px;
+	background: pink url(assets/images/KERA-blog-background.png) repeat-y 50% 0;
+}
+
+body p {
+}
+
+body .marketing_wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  overflow:hidden;
+}
+
+body>iframe {
+  display: none;
+}
+
+.btn { 
+  display:block;
+  line-height:50px;
+  text-transform:uppercase;
+  text-align:center;
+  text-decoration:none;
+  color:#FFF;
+  background-color:#2284c3;
+  background-image:url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png);
+}
+.btn.btn_primary  {
+  background-color:#0b9b4b;
+}
+.btn:hover{
+  background-image:url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png);
+}
+
+/* ============================================================
+   Header
+============================================================ */
+
+.marketing_header {
+  background: #fff;*zoom:1;
+}
+.marketing_header:before,.marketing_header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.marketing_header:after {
+  clear: both;
+}
+.marketing_header .marketing_wrapper {
+  position: relative;
+}
+.marketing_header .logo {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  width: 125px;
+  height: 38px;
+  text-indent: -9999em;
+  background: url(http://www.kera.io/assets/marketing2/logo.png) no-repeat 0 50%;
+  display: block;
+}
+.marketing_header .marketing_links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;*zoom:1;
+  float: right;
+}
+.marketing_header .marketing_links:before,.marketing_header .marketing_links:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.marketing_header .marketing_links:after {
+	clear: both;
+}
+.marketing_header .marketing_links>li {
+	float: left;
+}
+.marketing_header .marketing_links>li>a {
+	font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	display: block;
+	position: relative;
+	line-height: 100px;
+	text-align: center;
+	padding: 0 25px;
+}
+.marketing_header .marketing_links>li.marketing_links_login>a {
+	display: block;
+	padding: 0 50px 0 25px;
+}
+.marketing_header .marketing_links>li>a:link,.marketing_header .marketing_links>li>a:visited {
+	text-transform: uppercase;
+	color: #2284c3;
+	text-decoration: none;
+}
+.marketing_header .marketing_links>li>a:link.primary,.marketing_header .marketing_links>li>a:visited.primary {
+	color: #0b9b4b;
+}
+.marketing_header .marketing_links>li>a.primary {
+	padding: 0 80px 0 50px;
+	border-right: solid 1px #dddddd;
+	border-left: solid 1px #dddddd;
+}
+.marketing_header .marketing_links>li>a.primary:after {
+	content: '.';
+	text-indent: -9999em;
+	background: url(http://www.kera.io/assets/marketing2/primary_chevron.png);
+	width: 16px;
+	height: 28px;
+	position: absolute;
+	top: 50%;
+	margin-top: -14px;
+	margin-left: 15px;
+}
+.marketing_header .marketing_links>li>a:hover {
+	font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	opacity: 0.75;
+}
+
+.blog_marquee_wrapper {
+	position: relative;
+	background: #444;
+	height: 75px;
+}
+
+.blog_marquee {
+	-webkit-font-smoothing:antialiased;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background: #444;
+	padding: 10px 0;
+	font: normal normal 20px/55px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+}
+
+.blog_marquee p {
+	display: inline;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.blog_marquee p a {
+	display: none;
+	color: #1884c6;
+}
+
+.blog_marquee.fixed {
+	position: fixed;
+	z-index: 9999;
+}
+
+.blog_marquee.fixed p {
+	position: relative;
+	padding: 0 150px 0 0;
+}
+
+.blog_marquee.fixed p a {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin: -20px 0 0 0;
+	width: 125px;
+	color: #FFF;
+	background-color: #0b9b4b;
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-size: 125px 40px;
+	font: normal normal 15px/40px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-align: center;
+}
+
+.blog_marquee.fixed p a:hover {
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png)
+}
+
+.marquee_close {
+	display: none;
+	position: absolute;
+  	font: normal normal 45px/45px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';	
+	width: 45px;
+	height: 45px;
+	top: 11px;
+	right: 15px;
+	color: #FFF;
+	opacity: 0.5;
+}
+
+.marquee_close:hover {
+	opacity: 1;
+}
+
+.blog_wrapper {
+	position: relative;
+	width: 725px;
+	margin: 0 auto;
+	padding: 0 275px 0 0;
+}
+
+.blog_sidebar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #FFF;
+	width: 273px;
+	border-right: solid 1px #DDD;
+	border-left: solid 1px #DDD;
+	color: #707070;
+  	font: normal normal 20px/25px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+.blog_sidebar a {
+	color: #1884c6;	
+}
+
+.blog_sidebar h4 {
+	margin: 0 0 10px 0;
+}
+
+.blog_sidebar .blog_sidebar_connect li {
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_subscribe a {
+	display: block;
+	margin: 0;
+	padding: 0 0 0 40px;
+	font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-transform: uppercase;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_rss {
+	padding: 30px 25px 5px 25px;
+   background-image: url(assets/images/subscribe_rss.png);
+   background-repeat: no-repeat;
+   background-position: 25px 100%;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email {
+	padding: 18px 25px 22px 25px;
+   background-image: url(assets/images/subscribe_email.png);
+   background-repeat: no-repeat;
+   background-position: 25px 17px;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form {
+	position: relative;
+	margin: 15px 0 0 0;
+	border: solid 1px #DDD;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form input {
+	margin: 0;
+	border: 0;
+	background: transparent;
+	padding: 10px 10px;
+	width: 170px;
+  	font: normal normal 20px/20px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	color: #1884c6;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form button {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	border: 0;
+	background-color: #0b9b4b;
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/email_chevron.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	text-indent: -9999em;
+	cursor: pointer;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form button:hover {
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png), url(assets/images/email_chevron.png);
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social {
+	position: relative;
+	padding: 0 25px;
+	margin: 3px 0 0 0;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social a {
+	display: block;
+	background: #F9F9F9;
+	padding: 5px 0 5px 50px;
+	font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-transform: uppercase;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social:last-child {
+	border-bottom: solid 1px #DDD;
+	padding: 0 25px 20px 25px;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_twitter a {
+	background: url(assets/images/social_twitter.png) no-repeat 0 0;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_facebook a {
+	background: url(assets/images/social_facebook.png) no-repeat 0 0;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_linkedin a {
+	background: url(assets/images/social_linkedin.png) no-repeat 0 0;
+}
+
+.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_googleplus a {
+	background: url(assets/images/social_google.png) no-repeat 0 0;
+}
+
+.blog_sidebar .blog_banner {
+	position: relative;
+	height: 200px;
+	padding: 25px;
+	border-bottom: solid 1px #DDD;
+}
+
+.blog_sidebar .blog_banner h2 {
+	position: absolute;
+	font: normal normal 20px/25px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-transform: uppercase;
+	color: #1884c6;
+}
+
+.blog_sidebar .blog_banner .blog_banner_art {
+	
+}
+
+.blog_sidebar .blog_recent_entries {
+	padding: 25px;
+	border-bottom: solid 1px #DDD;
+}
+
+.blog_sidebar .blog_tags {
+	padding: 25px;
+}
+
+.blog_sidebar .blog_tags ul li {
+	display: inline;
+	line-height: 28px;
+	color: #1884c6;
+}
+
+.blog_sidebar .blog_tags ul li:after {
+	content:', ';
+}
+
+.blog_sidebar .blog_tags ul li:last-child:after {
+	content:'';
+}
+
+.blog_posts {
+	padding: 49px 49px 50px 0px;
+}
+
+.blog_posts li.post {
+	position: relative;
+	border: solid 1px #DDD;
+	background: #FFF;
+	padding: 0 0 175px 0;
+	margin: 0 0 24px 0;
+}
+
+.blog_posts li.post .post_content a {
+	color: #1884c6;
+}
+
+.blog_posts li.post .post_content h1 {
+	padding: 75px 75px 0 75px;
+	margin: 0 0 28px 0;
+	text-align: center;
+	color: #f05742;
+	font: normal normal 30px/35px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+.blog_posts li.post .post_content h1 a {
+	bottom: 25px;
+	left: 0;
+	width: 100%;
+	color: #f05742;
+	text-align: center;
+}
+
+.blog_posts li.post .post_content p {
+	-webkit-font-smoothing:antialiased;
+	font: normal normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	color: #707070;
+	margin: 0 100px 28px 100px;
+}
+
+.blog_posts li.post .post_content p strong {
+	font: normal normal 20px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+.blog_posts li.post .post_content p em {
+	font: italic normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+.blog_posts li.post .post_content p strike {
+	display: block;
+	font: normal normal 20px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #f05742;
+}
+
+.blog_posts li.post .post_content p strike strong {
+	font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	margin: -14px 0 28px 0;
+	color: #707070;
+}
+
+.blog_posts li.post .post_content blockquote {
+	-webkit-font-smoothing:antialiased;
+	font: italic normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	margin: 0 125px 28px 125px;
+	color: #707070;
+}
+
+.blog_posts li.post .post_content p>img {
+	max-width: 576px;
+	margin: 0 0 0 -50px;
+}
+
+.blog_posts li.post .post_content p + ul, .blog_posts li.post .post_content p + ol {
+	margin: 0 100px 28px 100px;
+}
+
+.blog_posts li.post .post_content>ul {
+	margin: 0 100px 28px 100px;
+	list-style: disc inside;
+}
+
+.blog_posts li.post .post_content>ol {
+	margin: 0 100px 28px 100px;
+	list-style: decimal inside;
+}
+
+.blog_posts li.post .post_content>ul>li, .blog_posts li.post .post_content>ol>li {
+	-webkit-font-smoothing:antialiased;
+	font: normal normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	color: #707070;
+}
+
+.blog_posts li.post .post_content .post_meta {
+	position: absolute;
+	bottom: 100px;
+	width: 574px;
+	padding: 25px 0;
+	margin: 0 50px;
+}
+
+.blog_posts li.post .post_content .post_meta>p {
+	font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.blog_posts li.post .post_content .post_sharing {
+	position: absolute;
+	bottom: 44px;
+	width: 574px;
+	border-top: solid 1px #DDD;
+	margin: 0 50px;
+}
+
+.blog_posts li.post .post_content .post_sharing>ul {
+	margin: 0;
+}
+
+.blog_posts li.post .post_content .post_sharing>ul>li {
+	position: relative;
+	float: left;
+	width: 114px;
+	height: 50px;
+	border-right: solid 1px #DDD;
+}
+
+.blog_posts li.post .post_content .post_sharing>ul>li:last-child {
+	border: 0;
+}
+
+.blog_posts li.post .post_content .post_sharing>ul>li>a {
+	display: block;
+	padding: 0 0 0 50px;
+	font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	text-transform: uppercase;
+}
+
+.blog_posts li.post .post_content .post_sharing ul li.post_sharing_email {
+}
+
+.blog_footer {
+	clear: both;
+	background: #444;
+}
+
+
+
+
+
+
