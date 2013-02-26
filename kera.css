@@ -299,8 +299,7 @@ sub {
 
 body {
 	font: normal normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-	background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/T8umhpr3k/background2.png) center 7px;
-	background: pink url(assets/images/KERA-blog-background.png) repeat-y 50% 0;
+	background: #F9F9F9 url(assets/images/blog_background.png) repeat-y 50% 0;
 }
 
 body p {
@@ -358,7 +357,7 @@ body>iframe {
   width: 125px;
   height: 38px;
   text-indent: -9999em;
-  background: url(http://www.kera.io/assets/marketing2/logo.png) no-repeat 0 50%;
+  background: url(http://www.kera.io/assets/shared/logo.png) no-repeat 0 50%;
   display: block;
 }
 .marketing_header .marketing_links {
@@ -481,15 +480,15 @@ body>iframe {
 }
 
 .marquee_close {
-	display: none;
-	position: absolute;
-  	font: normal normal 45px/45px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';	
-	width: 45px;
-	height: 45px;
-	top: 11px;
-	right: 15px;
-	color: #FFF;
-	opacity: 0.5;
+  display: none;
+  position: absolute;
+  font: normal normal 45px/45px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';	
+  width: 45px;
+  height: 45px;
+  top: 11px;
+  right: 15px;
+  color: #FFF;
+  opacity: 0.5;
 }
 
 .marquee_close:hover {
@@ -512,7 +511,7 @@ body>iframe {
 	border-right: solid 1px #DDD;
 	border-left: solid 1px #DDD;
 	color: #707070;
-  	font: normal normal 20px/25px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+  font: normal normal 20px/25px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
 }
 
 .blog_sidebar a {
@@ -523,48 +522,56 @@ body>iframe {
 	margin: 0 0 10px 0;
 }
 
-.blog_sidebar .blog_sidebar_connect li {
+.blog_sidebar .blog_sidebar_connect_subscribe {
+  height: 199px;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_subscribe a {
-	display: block;
-	margin: 0;
-	padding: 0 0 0 40px;
-	font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-	text-transform: uppercase;
+.blog_sidebar .blog_sidebar_connect_subscribe>li>a {
+  display: block;
+  margin: 0;
+  padding: 0 0 0 40px;
+  font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  text-transform: uppercase;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_rss {
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_rss {
 	padding: 30px 25px 5px 25px;
-   background-image: url(assets/images/subscribe_rss.png);
-   background-repeat: no-repeat;
-   background-position: 25px 100%;
+  background-image: url(assets/images/subscribe_rss.png);
+  background-repeat: no-repeat;
+  background-position: 25px 100%;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email {
-	padding: 18px 25px 22px 25px;
-   background-image: url(assets/images/subscribe_email.png);
-   background-repeat: no-repeat;
-   background-position: 25px 17px;
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_reader {
+  padding: 20px 25px 15px 25px;
+  background-image: url(assets/images/subscribe_reader.png);
+  background-repeat: no-repeat;
+  background-position: 25px 15px;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form {
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email {
+  padding: 10px 25px 0 25px;
+  background-image: url(assets/images/subscribe_email.png);
+  background-repeat: no-repeat;
+  background-position: 25px 4px;
+}
+
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form {
 	position: relative;
 	margin: 15px 0 0 0;
 	border: solid 1px #DDD;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form input {
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form input {
 	margin: 0;
 	border: 0;
 	background: transparent;
 	padding: 10px 10px;
 	width: 170px;
-  	font: normal normal 20px/20px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+  font: normal normal 20px/20px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
 	color: #1884c6;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form button {
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form button {
 	position: absolute;
 	top: 6px;
 	right: 6px;
@@ -580,55 +587,69 @@ body>iframe {
 	cursor: pointer;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_email form button:hover {
+.blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form button:hover {
 	background-image: url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png), url(assets/images/email_chevron.png);
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social {
-	position: relative;
-	padding: 0 25px;
-	margin: 3px 0 0 0;
+.blog_sidebar .blog_sidebar_connect_social {
+  padding: 25px;
+  border-bottom: solid 1px #DDD;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social a {
+.blog_sidebar .blog_sidebar_connect_social>li {
+  float: left;
+  margin: 0 9px 0 0;
+}
+
+.blog_sidebar .blog_sidebar_connect_social li:last-child {
+	margin: 0;
+}
+
+.blog_sidebar .blog_sidebar_connect_social li a {
 	display: block;
-	background: #F9F9F9;
-	padding: 5px 0 5px 50px;
-	font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-	text-transform: uppercase;
+  width: 49px;
+  height: 50px;
+  background: #F9F9F9;
+  text-indent: -9999em;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 25px;
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_social:last-child {
-	border-bottom: solid 1px #DDD;
-	padding: 0 25px 20px 25px;
+.blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_twitter a {
+	background-color: #2eabdf;
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_twitter.png);
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_twitter a {
-	background: url(assets/images/social_twitter.png) no-repeat 0 0;
+.blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_facebook a {
+	background-color: #12539b;
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_facebook.png);
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_facebook a {
-	background: url(assets/images/social_facebook.png) no-repeat 0 0;
+.blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_linkedin a {
+	background-color: #0e6697; 
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_linkedin.png);
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_linkedin a {
-	background: url(assets/images/social_linkedin.png) no-repeat 0 0;
+.blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_googleplus a {
+	background-color: #dd4b39;
+	background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_google.png);
 }
 
-.blog_sidebar .blog_sidebar_connect li.blog_sidebar_connect_googleplus a {
-	background: url(assets/images/social_google.png) no-repeat 0 0;
-}
 
 .blog_sidebar .blog_banner {
 	position: relative;
-	height: 200px;
+	height: 250px;
 	padding: 25px;
 	border-bottom: solid 1px #DDD;
 }
 
 .blog_sidebar .blog_banner h2 {
 	position: absolute;
-	font: normal normal 20px/25px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	width: 223px;
+	bottom: 25px;
+	left: 25px;
+	font: normal normal 25px/30px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
 	text-transform: uppercase;
 	color: #1884c6;
 }
@@ -668,7 +689,7 @@ body>iframe {
 	position: relative;
 	border: solid 1px #DDD;
 	background: #FFF;
-	padding: 0 0 175px 0;
+	padding: 0 0 200px 0;
 	margin: 0 0 24px 0;
 }
 
@@ -678,7 +699,7 @@ body>iframe {
 
 .blog_posts li.post .post_content h1 {
 	padding: 75px 75px 0 75px;
-	margin: 0 0 28px 0;
+	margin: 0 0 30px 0;
 	text-align: center;
 	color: #f05742;
 	font: normal normal 30px/35px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
@@ -688,7 +709,7 @@ body>iframe {
 	bottom: 25px;
 	left: 0;
 	width: 100%;
-	color: #f05742;
+	color: #1884c6;
 	text-align: center;
 }
 
@@ -699,12 +720,21 @@ body>iframe {
 	margin: 0 100px 28px 100px;
 }
 
+.blog_posts li.post .post_content p.post_date {
+  text-transform: uppercase;
+  text-align: center;
+  font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  margin: 0 0 0 0;
+  color: #707070;
+}
+
 .blog_posts li.post .post_content p strong {
-	font: normal normal 20px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+	font: normal normal 20px/28px 'MercuryBold','Helvetica Neue','Helvetica','Arial','sans-serif';
+	color: #666;
 }
 
 .blog_posts li.post .post_content p em {
-	font: italic normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+	font: normal normal 20px/28px 'MercuryRegularItalic','Helvetica Neue','Helvetica','Arial','sans-serif';
 }
 
 .blog_posts li.post .post_content p strike {
@@ -718,7 +748,7 @@ body>iframe {
 
 .blog_posts li.post .post_content p strike strong {
 	font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-	margin: -14px 0 28px 0;
+	margin: 0 0 28px 0;
 	color: #707070;
 }
 
@@ -756,7 +786,7 @@ body>iframe {
 
 .blog_posts li.post .post_content .post_meta {
 	position: absolute;
-	bottom: 100px;
+	bottom: 125px;
 	width: 574px;
 	padding: 25px 0;
 	margin: 0 50px;
@@ -771,7 +801,7 @@ body>iframe {
 
 .blog_posts li.post .post_content .post_sharing {
 	position: absolute;
-	bottom: 44px;
+	bottom: 69px;
 	width: 574px;
 	border-top: solid 1px #DDD;
 	margin: 0 50px;
@@ -795,12 +825,15 @@ body>iframe {
 
 .blog_posts li.post .post_content .post_sharing>ul>li>a {
 	display: block;
-	padding: 0 0 0 50px;
+	padding: 0 0 0 55px;
 	font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
 	text-transform: uppercase;
 }
 
 .blog_posts li.post .post_content .post_sharing ul li.post_sharing_email {
+  background-image: url(assets/images/subscribe_email.png);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
 }
 
 .blog_footer {
