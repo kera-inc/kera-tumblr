@@ -619,84 +619,86 @@
       ============================================================ */
 
       .marketing_header {
-        background: #fff;*zoom:1;
-        border-bottom: 1px solid #ddd;
-      }
-      .marketing_header:before,.marketing_header:after {
-        display: table;
-        content: "";
-        line-height: 0;
-      }
-      .marketing_header:after {
-        clear: both;
-      }
-      .marketing_header .marketing_wrapper {
-        position: relative;
-      }
-      .marketing_header .logo {
-        position: absolute;
-        left: 25px;
-        top: 30px;
-        width: 125px;
-        height: 38px;
-        text-indent: -9999em;
-        background: url(http://www.kera.io/assets/marketing2/logo.png) no-repeat 0 50%;
-        display: block;
-      }
-      .marketing_header .marketing_links {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;*zoom:1;
-        float: right;
-        border-left: solid 1px #dddddd;
-      }
-      .marketing_header .marketing_links:before,.marketing_header .marketing_links:after {
-        display: table;
-        content: "";
-        line-height: 0;
-      }
-      .marketing_header .marketing_links:after {
-        clear: both;
-      }
-      .marketing_header .marketing_links>li {
-        float: left;
-      }
-      .marketing_header .marketing_links>li>a {
-        font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-        display: block;
-        position: relative;
-        border-right: solid 1px #dddddd;
-        line-height: 100px;
-        padding-left: 50px;
-        padding-right: 50px;
-        text-align: center;
-      }
-      .marketing_header .marketing_links>li>a:link,.marketing_header .marketing_links>li>a:visited {
-        text-transform: uppercase;
-        color: #2284c3;
-        text-decoration: none;
-      }
-      .marketing_header .marketing_links>li>a:link.primary,.marketing_header .marketing_links>li>a:visited.primary {
-        color: #0b9b4b;
-      }
-      .marketing_header .marketing_links>li>a.primary {
-        padding-right: 81px;
-      }
-      .marketing_header .marketing_links>li>a.primary:after {
-        content: '.';
-        text-indent: -9999em;
-        background: url(http://www.kera.io/assets/marketing2/primary_chevron.png);
-        width: 16px;
-        height: 28px;
-        position: absolute;
-        top: 50%;
-        margin-top: -14px;
-        margin-left: 15px;
-      }
-      .marketing_header .marketing_links>li>a:hover {
-        font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-        opacity: 0.75;
-      }
+  background: #fff;*zoom:1;
+}
+.marketing_header:before,.marketing_header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.marketing_header:after {
+  clear: both;
+}
+.marketing_header .marketing_wrapper {
+  position: relative;
+}
+.marketing_header .logo {
+  position: absolute;
+  left: 25px;
+  top: 30px;
+  width: 125px;
+  height: 38px;
+  text-indent: -9999em;
+  background: url(http://www.kera.io/assets/shared/logo.png) no-repeat 0 50%;
+  display: block;
+}
+.marketing_header .marketing_links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;*zoom:1;
+  float: right;
+}
+.marketing_header .marketing_links:before,.marketing_header .marketing_links:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.marketing_header .marketing_links:after {
+  clear: both;
+}
+.marketing_header .marketing_links>li {
+  float: left;
+}
+.marketing_header .marketing_links>li>a {
+  font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  display: block;
+  position: relative;
+  line-height: 100px;
+  text-align: center;
+  padding: 0 25px;
+}
+.marketing_header .marketing_links>li.marketing_links_login>a {
+  display: block;
+  padding: 0 50px 0 25px;
+}
+.marketing_header .marketing_links>li>a:link,.marketing_header .marketing_links>li>a:visited {
+  text-transform: uppercase;
+  color: #2284c3;
+  text-decoration: none;
+}
+.marketing_header .marketing_links>li>a:link.primary,.marketing_header .marketing_links>li>a:visited.primary {
+  color: #0b9b4b;
+}
+.marketing_header .marketing_links>li>a.primary {
+  padding: 0 80px 0 50px;
+  border-right: solid 1px #dddddd;
+  border-left: solid 1px #dddddd;
+}
+.marketing_header .marketing_links>li>a.primary:after {
+  content: '.';
+  text-indent: -9999em;
+  background: url(http://www.kera.io/assets/marketing2/primary_chevron.png);
+  width: 16px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  margin-left: 15px;
+}
+.marketing_header .marketing_links>li>a:hover {
+  font: normal normal 15px/100px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  opacity: 0.75;
+}
 
       /* ============================================================
          Social
