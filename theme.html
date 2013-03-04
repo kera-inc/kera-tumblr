@@ -67,7 +67,7 @@
           $('.blog_marquee_wrapper').hide();
           $('.blog_marquee').hide();
           $('header').css('border-bottom', 'solid 1px #DDD');
-          $('.blog_posts').css('padding-top', '48px');
+          $('#posts').css('padding-top', '48px');
         });
 
       });
@@ -861,101 +861,128 @@
             border-bottom: none;
           }
         
-        /* RSS */
+        /* Sharing + Social */
 
-        #blog_sidebar #rss {
-          height: 40px;
-          width: 220px;
-          margin: 22px auto;
+        #blog_sidebar .blog_sidebar_connect_subscribe {
+          height: 199px;
         }
-          #blog_sidebar #rss .share-rss {
-            background-image: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
-            background-repeat: no-repeat;
-            background-position: -187px -12px;
-            height: 40px;
-            width: 25px;
-            float:left;
-            margin: -5px 5px 0 0px;
-          }
-          #blog_sidebar #rss p {
-            font-size: 15px;
-            text-transform: uppercase;
-            margin-left: 42px;
-          }
 
-        /* E-mail */
-
-        #blog_sidebar #email {
-            height: 170px;
-            width: 220px;
-            margin: 0 auto;
-          }
-          #blog_sidebar #email .share-email {
-              background-image: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
-              background-repeat: no-repeat;
-              background-position: -27px -365px;
-              height: 40px;
-              width: 25px;
-              display: block;
-              float:left;
-              margin: -5px 5px 0 0px;
-          }
-          #blog_sidebar #email p {
-            font-size: 15px;
-            text-transform: uppercase;
-            color: #2284c3;
-            margin-left: 42px;
-          }
-          #blog_sidebar #email input[type=text] {
-            border: 1px solid #ddd;
-            height: 25px;
-            width: 196px;
-            margin-bottom: 20px;
-            padding: 10px 10px 10px 12px;
-            color: #2284c3;
-            font-size: 18px;
-          }
-          #blog_sidebar #email input[type=submit] {
-            border: none;
-            height: 40px;
-            width: 100%;
-            margin: 0;
-            padding: 10px;
-            color: #fff;
-            font-size: 18px;
-            background: #2284c3;
-          }
-            #blog_sidebar #email input[type=submit]:hover {
-              opacity: 0.75;
-            }
-
-        /* Social */
-
-        #blog_sidebar #social {
-          height: 70px;
-          width: 220px;
-          margin: 0 0 22px 16px;
-
+        #blog_sidebar .blog_sidebar_connect_subscribe>li {
+          border:none;
         }
-          #blog_sidebar #social .share-button {
-            background: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
-            height: 70px;
-            width: 53px;
-            float:left;
-          }
-            #blog_sidebar #social .share-twitter {
-                background-position: -92px -140px;
-            }
-            #blog_sidebar #social .share-facebook {
-                background-position: -92px -70px;
-            }
-            #blog_sidebar #social .share-linkedin {
-                background-position: -92px -210px;
-            }
-            #blog_sidebar #social .share-google {
-                background-position: -92px -280px;
-            }
 
+        #blog_sidebar .blog_sidebar_connect_subscribe>li>a {
+          display: block;
+          margin: 0;
+          padding: 0 0 0 40px;
+          font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+          text-transform: uppercase;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_rss {
+          padding: 30px 25px 5px 25px;
+          background-image: url(assets/images/subscribe_rss.png);
+          background-repeat: no-repeat;
+          background-position: 25px 100%;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_reader {
+          padding: 20px 25px 15px 25px;
+          background-image: url(assets/images/subscribe_reader.png);
+          background-repeat: no-repeat;
+          background-position: 25px 15px;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email {
+          padding: 10px 25px 0 25px;
+          background-image: url(assets/images/subscribe_email.png);
+          background-repeat: no-repeat;
+          background-position: 25px 4px;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form {
+          position: relative;
+          margin: 15px 0 0 0;
+          border: solid 1px #DDD;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form input {
+          margin: 0;
+          border: 0;
+          background: transparent;
+          padding: 10px 10px;
+          width: 170px;
+          font: normal normal 20px/20px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+          color: #1884c6;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form button {
+          position: absolute;
+          top: 6px;
+          right: 6px;
+          border: 0;
+          background-color: #0b9b4b;
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/email_chevron.png);
+          background-repeat: no-repeat;
+          background-position: 50%;
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          text-indent: -9999em;
+          cursor: pointer;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_subscribe li.blog_sidebar_connect_email form button:hover {
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent_hover-c1297993a518932ad1e0ae3461a18c46.png), url(assets/images/email_chevron.png);
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social {
+          height: 50px;
+          padding: 10px 25px 25px 25px;
+          
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social>li {
+          float: left;
+          margin: 0 9px 0 0;
+          border: none;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li:last-child {
+          margin: 0;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li a {
+          display: block;
+          width: 49px;
+          height: 50px;
+          background: #F9F9F9;
+          text-indent: -9999em;
+          background-repeat: no-repeat;
+          background-position: 50%;
+          border-radius: 25px;
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_twitter a {
+          background-color: #2eabdf;
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_twitter.png);
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_facebook a {
+          background-color: #12539b;
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_facebook.png);
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_linkedin a {
+          background-color: #0e6697; 
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_linkedin.png);
+        }
+
+        #blog_sidebar .blog_sidebar_connect_social li.blog_sidebar_connect_googleplus a {
+          background-color: #dd4b39;
+          background-image: url(https://www.kera.io/assets/marketing2/btn_accent-6478001a5f1076f96e2cb5df724afc6c.png), url(assets/images/social_google.png);
+        }
+     
         /* CTA - Banner */
 
         #blog_sidebar #banner {
@@ -1074,6 +1101,60 @@
               font: 19px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
               font-weight: bold;
             }
+            
+
+#posts li.post .post_content p strong {
+  font: normal normal 20px/28px 'MercuryBold','Helvetica Neue','Helvetica','Arial','sans-serif';
+  color: #666;
+}
+
+#posts li.post .post_content p em {
+  font: normal normal 20px/28px 'MercuryRegularItalic','Helvetica Neue','Helvetica','Arial','sans-serif';
+}
+
+#posts li.post .post_content p strike {
+  display: block;
+  font: normal normal 20px/28px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f05742;
+}
+
+#posts li.post .post_content p strike strong {
+  font: normal normal 15px/15px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  margin: 0 0 28px 0;
+  color: #707070;
+}
+
+#posts li.post .post_content blockquote {
+  -webkit-font-smoothing:antialiased;
+  font: italic normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
+  margin: 0 125px 28px 125px;
+  color: #707070;
+}
+
+#posts li.post .post_content p>img {
+  max-width: 576px;
+  margin: 0 0 0 -50px;
+}
+
+#posts li.post .post_content p + ul, #posts li.post .post_content p + ol {
+  margin: 0 100px 28px 100px;
+}
+
+#posts li.post .post_content>ul {
+  margin: 0 100px 28px 100px;
+  list-style: disc inside;
+}
+
+#posts li.post .post_content>ol {
+  margin: 0 100px 28px 100px;
+  list-style: decimal inside;
+}
+
+
+
             ol#posts li .post-content p a {
               color: #2694D0;
             }
@@ -1164,95 +1245,59 @@
 
         /* Sharing */
 
-        ol#posts li .post-sharing {
-            background: #fff;
-            position: relative;
-            border-top: 1px solid #DDD;
-            padding: 0px 0 0px 0;
-            margin: 20px 75px 5px 75px;
-            height: 70px;
-            text-align:center;
-          }
-          
-          .post-sharing .share-button {
-            background: url(http://static.tumblr.com/56y0d5q/ufYmhie1w/social_sprites.png);
-            position: absolute;
-            height: 70px;
-            width: 80px;
-            top: 20px;
-          }
-           .post-sharing .share-twitter {
-            background-position: -160px -140px;
-            left: 75px;
-          }
-            .post-sharing .share-twitter:hover {
-              background-position: -80px -140px;
-            }
-          .post-sharing .share-facebook {
-            background-position: -160px -70px;
-            left: 155px;      
-          }
-            .post-sharing .share-facebook:hover {
-              background-position: -80px -70px;
-            }
-          
-          .post-sharing .share-linkedin {
-            background-position: -160px -210px;
-            left: 230px;      
-          }
-            .post-sharing .share-linkedin:hover {
-              background-position: -80px -210px;
-            }
+ol#posts .post_content .post_meta {
+  position: absolute;
+  bottom: 125px;
+  width: 574px;
+  padding: 25px 0;
+  margin: 0 50px;
+}
 
-          .post-sharing .share-google {
-            background-position: -160px -280px;
-            left: 305px;
-          }
-            .post-sharing .share-google:hover {
-              background-position: -80px -280px;
-            }
-          .post-sharing .share-email {
-            background-position: -160px -350px;
-            left: 380px;
-          }
-            .post-sharing .share-email:hover {
-              background-position: -80px -350px;
-            }
-          .sharing-frames {
-            background: #fff;
-            position: relative;
-            margin: 20px auto 0 auto;
-            height: 30px;
-            text-align:center;
-            width: 400px;
-          }
-            .sharing-frames .twitter-frame, .facebook-frame, .linkedin-frame, .google-frame, .email-frame{
-              top: 20px;
-              height: 25px;
-              width: 80px;
-              position: absolute;
-            }
-              .sharing-frames .twitter-frame{
-                top: -5px;
-                left: 10px;
-              }
-              .sharing-frames .facebook-frame{
-                top: -7px;
-                left: 90px; 
-              }
-              .sharing-frames .linkedin-frame{
-                top: -5px;
-                left: 160px;
-                width: 100px;
-              }
-              .sharing-frames .google-frame{
-                top: -5px;
-                left: 240px;
-              }
-              .sharing-frames .email-frame {
-                top: -7px;              
-                left: 320px;
-              }
+#posts li .post_content .post_meta>p {
+  font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#posts .post_sharing {
+  position: absolute;
+  bottom: 69px;
+  width: 574px;
+  border-top: solid 1px #DDD;
+  margin: 0 50px;
+}
+
+#posts .post_sharing>ul {
+  margin: 0;
+}
+
+#posts .post_sharing>ul>li {
+  position: relative;
+  float: left;
+  width: 114px;
+  height: 50px;
+  border-right: solid 1px #DDD;
+}
+
+#posts .post_sharing>ul>li:last-child {
+  border: 0;
+}
+
+#posts .post_sharing>ul>li>a {
+  display: block;
+  padding: 0 0 0 55px;
+  font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+  text-transform: uppercase;
+}
+
+#posts .post_sharing ul li.post_sharing_email {
+  background-image: url(assets/images/subscribe_email.png);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+}
+
+        /* Commnets */
 
         ol#posts #comments {
         background:#fff;
@@ -1450,29 +1495,35 @@
 
           <ul id="blog_sidebar">
             <li>
-              <div id="rss">
-                <span class="share-rss"></span><p><a href="http://feeds.feedburner.com/kerablog" rel="alternate" type="application/rss+xml" id="rss-label">Subscribe with RSS</a></p>
-              </div>
-
-              <div id="email">
-                <form style="" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=kerablog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-                  <div><span class="share-email"></span><p>Subscribe with Email</p></div>
-                  <input type="text" name="email" value=""/>
-                  <input type="hidden" value="kerablog" name="uri"/>
-                  <input type="hidden" name="loc" value="en_US"/>
-                  <input type="submit" value="Subscribe" />
-                </form>
-              </div>
-              <div id="social">
-                <a class="share-button share-twitter" href="http://twitter.com/keraproject" alt="Follow @keraproject" target="_blank">
-                </a>
-                <a class="share-button share-facebook" href="https://www.facebook.com/keraproject" target="_blank">
-                </a>
-                <a class="share-button share-linkedin" href="http://www.linkedin.com/company/2697869" target="_blank">
-                </a>
-                <a class="share-button share-google" href="https://plus.google.com/u/0/115380801038755793987/" target="_blank">
-                </a>
-              </div>
+              <ul class="blog_sidebar_connect_subscribe">
+                <li class="blog_sidebar_connect_rss">
+                  <a href="#">Subscribe with RSS</a>
+                </li>
+                <li class="blog_sidebar_connect_reader">
+                  <a href="#">Add to Google Reader</a>
+                </li>
+                <li class="blog_sidebar_connect_email">
+                  <a href="#">Subscribe by Email</a>
+                  <form>
+                    <input type="text" value="" />
+                    <button>Submit</button>
+                  </form>
+                </li>
+              </ul>
+              <ul class="clearfix blog_sidebar_connect_social">
+                <li class="blog_sidebar_connect_twitter">
+                  <a href="http://twitter.com/keraproject" target="_blank">Twitter</a>
+                </li>
+                <li class="blog_sidebar_connect_facebook">
+                  <a href="https://www.facebook.com/keraproject" target="_blank">Facebook</a>
+                </li>
+                <li class="blog_sidebar_connect_linkedin">
+                  <a href="http://www.linkedin.com/company/2697869" title="Kera Software Inc. | LinkedIn" target="_blank">LinkedIn</a>
+                </li>
+                <li class="blog_sidebar_connect_googleplus">
+                  <a href="https://plus.google.com/u/0/115380801038755793987/" target="_blank">Google+</a>
+                </li>
+              </ul>
             </li>
             <li>
               <a href="#" data-kera-tutorial="d4de8w" id="banner">
@@ -1538,37 +1589,30 @@
                   <p>Posted {block:Date}<a href="{Permalink}">{TimeAgo}{/block:Date}.</a></p>
                 </div>
 
-                <div class="post-sharing">
-                  <a class="share-button share-twitter">
-                  </a>
-                  <a class="share-button share-facebook">
-                  </a>
-                  <a class="share-button share-linkedin">
-                  </a>
-                  <a class="share-button share-google">
-                  </a>
-                  <a class="share-button share-email">               
-                  </a>
-                </div>
-                
-                <div class="sharing-frames">
-                  <div class="frames twitter-frame">
-                      <a href="https://twitter.com/share" class="twitter-share-button" data-url="{Permalink}" data-related="keraproject">Tweet</a>                  
-                  </div>
-                  <div class="frames facebook-frame">
-                      <div class="fb-like" data-href="{Permalink}" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
-                  </div>
-                  <div class="frames linkedin-frame">
-                      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                      <script type="IN/Share" data-url="{Permalink}" data-counter="right"></script>
-                  </div>
-                  <div class="frames google-frame">
-                    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-                  </div>
-                  <div class="frames email-frame">
-                    <a href="mailto:?&subject={Title}&body=Check%20out%20this%20link:%20{Permalink}">Email &raquo;</a>
-                  </div>
-                </div>
+                <div class="post_meta">
+            <p class="post_meta_tags">Tags: <a href="http://example.com/">Product Preview</a></p>
+          </div>
+          
+          <div class="post_sharing">
+            <ul class="clearfix">
+              <li class="post_sharing_twitter">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kera.io" data-related="keraproject">Tweet</a>  
+              </li>
+              <li class="post_sharing_facebook">
+                <div class="fb-like" data-href="http://kera.io" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>
+              </li>
+              <li class="post_sharing_linkedin">
+                <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+                      <script type="IN/Share" data-url="http://kera.io" data-counter="right"></script>
+              </li>
+              <li class="post_sharing_googleplus">
+                <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+              </li>
+              <li class="post_sharing_email">
+                <a href="mailto:?&subject=TITLE&body=Check%20out%20this%20link:%20PERMALINK">Email</a>
+              </li>
+            </ul>
+          </div>
 
             </li>   
             {/block:Text}
