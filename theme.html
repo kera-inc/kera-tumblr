@@ -4,6 +4,10 @@
 
     <title>Kera Blog{block:PostTitle} : {PostTitle}{/block:PostTitle}</title>
   
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+
     <link rel="shortcut icon" href="{Favicon}"/>
     
     <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
