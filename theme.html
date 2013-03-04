@@ -7,7 +7,7 @@
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
-
+  
     <link rel="shortcut icon" href="{Favicon}"/>
     
     <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
@@ -81,8 +81,6 @@
       // Recent Posts :: how many?
       var recent_posts_nr = 3;
     </script>
-
-    
 
     <style type="text/css">
 
@@ -1263,7 +1261,7 @@ ol#posts .post_content .post_meta {
 }
 
 #posts .post_sharing {
-  position: absolute;
+  height: 40px;
   bottom: 69px;
   width: 574px;
   border-top: solid 1px #DDD;
@@ -1278,12 +1276,17 @@ ol#posts .post_content .post_meta {
   position: relative;
   float: left;
   width: 114px;
-  height: 50px;
+  height: 40px;
   border-right: solid 1px #DDD;
+  text-align:center;
+  padding-top: 20px;
 }
-
+#posts .post_sharing>ul>li:first-child {
+  text-align:right;
+}
 #posts .post_sharing>ul>li:last-child {
   border: 0;
+  text-align:left;
 }
 
 #posts .post_sharing>ul>li>a {
@@ -1292,7 +1295,9 @@ ol#posts .post_content .post_meta {
   font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
   text-transform: uppercase;
 }
-
+#posts .post_sharing ul li.post_sharing_twitter {
+  width: 100px;
+}
 #posts .post_sharing ul li.post_sharing_email {
   background-image: url(assets/images/subscribe_email.png);
   background-repeat: no-repeat;
