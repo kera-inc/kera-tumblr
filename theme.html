@@ -1078,7 +1078,7 @@
           padding-top: 49px;
           width: 725px;
           margin: 0px;
-          margin-left: 2px;
+          margin-left: 1px;
       }
 
         ol#posts li.post {
@@ -1731,6 +1731,7 @@ ol#posts .post_content .post_meta {
               <div class="post-content">
                 <div class="content-img-wrapper">{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}
                 </div>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 {block:Caption}
                 <div class="caption">{Caption}
                 </div>{/block:Caption}
@@ -1749,7 +1750,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -1782,6 +1782,7 @@ ol#posts .post_content .post_meta {
               <div class="post-content">
                 {Photoset-250}
                 {block:Photos}{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}<p class="indv-caption">{Caption}</p>{/block:Photos}
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
               </div>
 
@@ -1798,7 +1799,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>            
                 
                 <div class="post_sharing">
@@ -1830,6 +1830,7 @@ ol#posts .post_content .post_meta {
 
               <div class="post-content">
                 <h1>{Quote}</h1>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 {block:Source}<div class="source">{Source}</div>{/block:Source}
               </div>
 
@@ -1845,8 +1846,6 @@ ol#posts .post_content .post_meta {
                     {/block:Tags}
                   </ul>
                   {/block:HasTags}
-                  
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -1878,6 +1877,7 @@ ol#posts .post_content .post_meta {
               
               <div class="post-content">
                 <h1><a href="{URL}" class="link" target="{Target}">{Name}</a></h1>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>                
                 {block:Description}<div class="caption">{Description}</div>{/block:Description}
               </div>
 
@@ -1894,7 +1894,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -1928,7 +1927,7 @@ ol#posts .post_content .post_meta {
                 {block:Title}
                 <h1>{Title}</h1>
                 {/block:Title}
-                
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 <ul>
                 {block:Lines}
                   <li class="{Alt} user_{UserNumber}">
@@ -1951,7 +1950,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -1985,6 +1983,7 @@ ol#posts .post_content .post_meta {
                 <div class="video-wrapper">
                   {Video-500}
                 </div>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
               </div>
 
@@ -2001,7 +2000,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -2035,6 +2033,7 @@ ol#posts .post_content .post_meta {
                
                <ul class="album-details">
                 <li>{block:TrackName}<h1>{TrackName}</h1>{/block:TrackName}</li>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 <li>{block:Artist}By {Artist}{/block:Artist}</li>
                </ul><!--album-details close-->
                 
@@ -2077,7 +2076,6 @@ ol#posts .post_content .post_meta {
                   </ul>
                   {/block:HasTags}
 
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 </div>
                 
                 <div class="post_sharing">
@@ -2110,6 +2108,7 @@ ol#posts .post_content .post_meta {
               <div class="post-content">
                 <h1>{Asker} asks:</h1>
                 <p>{Question}</p>
+                <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
                 <blockquote >{Answer}</blockquote>
               </div>
 
@@ -2125,8 +2124,7 @@ ol#posts .post_content .post_meta {
                     {/block:Tags}
                   </ul>
                   {/block:HasTags}
-                                    
-                  <p class="post_date">{block:Date}<a href="{Permalink}">{DayOfMonth} {Month} {Year}{/block:Date}.</a></p>
+
                 </div>
                 
                 <div class="post_sharing">
