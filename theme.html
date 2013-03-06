@@ -34,7 +34,22 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
  
+
+
+
     <script type="text/javascript">
+
+      $(function() {
+        var grid = 25;
+
+        $('.grid_button').each(function() {
+          // measure the width of the item and round it up to the nearest grid size
+          var size = $(this).width();
+          var roundedSize = Math.ceil(size/grid) * grid;
+          $(this).css({ width: roundedSize });
+        });
+      });
+
       $(window).load(function(){
           var grid = 25;
           
@@ -561,7 +576,7 @@
       @font-face{
         font-family:'MercuryRegular';
         src:url(https://www.kera.io/assets/mercury_regular-webfont-5310d085a5197e6c9f0a32fa52d9328a.eot);
-        src:url(https://www.kera.io/assets/marketing2/mercury_regular-webfont.eot?#iefix) format('embedded-opentype'),
+        src:url(https://www.kera.io/assets/mercury_regular-webfont.eot?#iefix) format('embedded-opentype'),
         url(https://www.kera.io/assets/mercury_regular-webfont-5595aad32fa4d77b9e3fa4c12d1d8d44.woff) format('woff'),
         url(https://www.kera.io/assets/mercury_regular-webfont-0fade063ff1733cd7384ad10d103e178.ttf) format('truetype'),
         url(https://www.kera.io/assets/mercury_regular-webfont.svg#MercuryRegular) format('svg');
@@ -615,7 +630,7 @@
 
       body {
         font: light normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-        background:  #f9f9f9 url(http://static.tumblr.com/rjuukmo/HUamj5p5p/blog_background.png) center 0px;
+        background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/T8umhpr3k/background2.png) center 0px;
       }
 
       body p {
@@ -624,7 +639,7 @@
 
 
       body .marketing_wrapper {
-        width: 1003px;
+        width: 1000px;
         margin: 0 auto;
         overflow:hidden;
       }
@@ -1100,7 +1115,6 @@
           padding-top: 49px;
           width: 725px;
           margin: 0px;
-          margin-left: 1px;
       }
 
         ol#posts li.post {
@@ -1184,19 +1198,6 @@
               color: #f05742;
               margin-top: 20px;
             }
-
-            ol#posts li .post_content blockquote {
-              -webkit-font-smoothing:antialiased;
-              font: italic normal 20px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
-              margin: 0 125px 28px 125px;
-              color: #707070;
-            }
-
-            ol#posts li .post_content p>img {
-              max-width: 576px;
-              margin: 0 0 0 -50px;
-            }
-
             ol#posts li .post_content p + ul, #posts li.post .post_content p + ol {
               margin: 0 100px 28px 100px;
             }
@@ -1243,7 +1244,6 @@
                 }
           ol#posts li .post-content img {
             width: 572px;
-            margin: 0 50px;
           }
           ol#posts li .post-content .video {
             margin: 25px 25px 0px 25px;
@@ -1258,10 +1258,14 @@
               margin: 20px 75px
           }
           ol#posts li .post-content blockquote, ol#posts li .post-content blockquote p {
-            margin: 30px 50px 0 50px;
+            -webkit-font-smoothing:antialiased;
+            margin: 25px 100px 0 100px;
             font: normal normal 18px/28px 'MercuryRegular','Helvetica Neue','Helvetica','Arial','sans-serif';
             font-style: italic;
             color: #666666;      
+            }
+            ol#posts li .post-content blockquote p {
+              margin: 0;
             }
 
           ol#posts li .post-data ul.tags {
@@ -1351,6 +1355,9 @@ ol#posts .post_content .post_meta {
   padding-left: 14px;
   padding-right: 0px;
 }
+#posts .post_sharing ul li.post_sharing_linkedin {
+  padding-left: 5px;
+}
 #posts .post_sharing ul li.post_sharing_email {
   background-image: url(http://static.tumblr.com/rjuukmo/5rHmj5par/subscribe_email.png);
   background-repeat: no-repeat;
@@ -1369,7 +1376,7 @@ ol#posts .post_content .post_meta {
 
       #tmblr .blog_wrapper #nav {
         background:#fff;
-        width: 676px;
+        width: 674px;
         padding: 23px 0px 25px 0px;
         margin: 0px 0px 50px 0px;
         border: 1px solid #ddd;
