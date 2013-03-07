@@ -62,7 +62,7 @@
           });
           
           var blogHeight = $('.blog_wrapper').height();
-          $('.blog_sidebar').css({ height: blogHeight });
+          $('#blog_sidebar').css({ height: blogHeight });
           
           var marquee = $('.blog_marquee'),
           pos = marquee.offset();
@@ -630,7 +630,7 @@
 
       body {
         font: light normal 15px/20px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-        background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/T8umhpr3k/background2.png) center 0px;
+        background:  #f9f9f9 url(http://static.tumblr.com/56y0d5q/8Esmjb3b6/background.png) center 0px;
       }
 
       body p {
@@ -644,7 +644,7 @@
         overflow:hidden;
       }
       body .blog_wrapper {
-        width: 1003px;
+        width: 1000px;
         margin: 0 auto;
         overflow:hidden;
       }
@@ -780,7 +780,7 @@
       }
       .marketing_social p.social_signup {
         position: relative;
-        width: 500px;
+        width: 501px;
         line-height: 100px;
       }
       .marketing_social p.social_signup a {
@@ -800,7 +800,7 @@
         text-indent: 0;
       }
       .marketing_social p.social_facebook,.marketing_social p.social_twitter {
-        width: 247px;
+        width: 245px;
         position: relative;
       }
       .marketing_social p.social_twitter {
@@ -899,15 +899,17 @@
       ============================================================ */
 
       #blog_sidebar {
-        width: 274px;
+        width: 273px;
         float:right;
         background:#fff;
         border: none;
+        border-left: 1px solid #ddd;
         border-right: 1px solid #ddd;
         clear:both;
         padding: 0;
         padding-bottom:9999px;
         margin-bottom:-9999px;
+        margin-right:1px;
       }
         #blog_sidebar li {
           border-bottom: 1px solid #ddd;
@@ -1042,7 +1044,7 @@
 
         #blog_sidebar #banner {
           display: block;
-          width: 224px;
+          width: 223px;
           height: 350px;
           top: 82px;
           right: 19px;
@@ -1504,9 +1506,13 @@ ol#posts .post_content .post_meta {
       (-webkit-min-device-pixel-ratio: 2), 
       (min-resolution: 192dpi) { 
         body {
-            background-image:  url(http://static.tumblr.com/rjuukmo/RxVmj5p6d/blog_backgroundx2.png) center 0px;
+            background-image:  url(http://static.tumblr.com/rjuukmo/RxVmj5p6d/blog_backgroundx2.png) center 1px;
             background-size: 2557px;
           }
+
+        ol#posts {
+          padding-top: 47px;
+        }
         
         .marketing_header .logo {
             background-image: url(http://static.tumblr.com/rjuukmo/B3Amj5p7k/logox2.png);
@@ -1599,7 +1605,7 @@ ol#posts .post_content .post_meta {
           <a href="http://kera.io/" class="logo">Kera</a>
 
           <ul class="marketing_links">
-            <li><a href="http://blog.kera.io" target="_blank">Blog</a></li>
+            <li><a href="http://blog.kera.io">Blog</a></li>
             <li><a href="http://kera.io/pricing">Pricing</a></li>
             <li class="marketing_links_login"><a href="http://kera.io/auth/google_oauth2">Login</a></li>
             <li class="grid_button"><a href="http://kera.io/pricing" class="primary">Signup</a></li>
