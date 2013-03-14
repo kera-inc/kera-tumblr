@@ -968,7 +968,6 @@
         #blog_sidebar .blog_sidebar_connect_social {
           height: 50px;
           padding: 10px 25px 25px 25px;
-          
         }
 
         #blog_sidebar .blog_sidebar_connect_social>li {
@@ -1273,70 +1272,70 @@
 
         /* Sharing */
 
-ol#posts .post_content .post_meta {
-  position: absolute;
-  bottom: 125px;
-  width: 574px;
-  padding: 25px 0;
-  margin: 0 50px;
-}
+        ol#posts .post_content .post_meta {
+          position: absolute;
+          bottom: 125px;
+          width: 574px;
+          padding: 25px 0;
+          margin: 0 50px;
+        }
 
-#posts li .post_content .post_meta>p {
-  font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0;
-}
+        #posts li .post_content .post_meta>p {
+          font: normal normal 15px/25px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+          text-align: center;
+          text-transform: uppercase;
+          margin: 0;
+        }
 
-#posts .post_sharing {
-  height: 40px;
-  bottom: 69px;
-  width: 574px;
-  border-top: solid 1px #DDD;
-  margin: 0 50px;
-}
+        #posts .post_sharing {
+          height: 40px;
+          bottom: 69px;
+          width: 574px;
+          border-top: solid 1px #DDD;
+          margin: 0 50px;
+        }
 
-#posts .post_sharing>ul {
-  margin: 0;
-}
+        #posts .post_sharing>ul {
+          margin: 0;
+        }
 
-#posts .post_sharing>ul>li {
-  position: relative;
-  float: left;
-  width: 114px;
-  height: 40px;
-  border-right: solid 1px #DDD;
-  text-align:center;
-  padding-top: 20px;
-}
-#posts .post_sharing>ul>li:first-child {
-  text-align:right;
-}
-#posts .post_sharing>ul>li:last-child {
-  border: 0;
-  text-align:left;
-  padding-top: 7px;
-}
+        #posts .post_sharing>ul>li {
+          position: relative;
+          float: left;
+          width: 114px;
+          height: 40px;
+          border-right: solid 1px #DDD;
+          text-align:center;
+          padding-top: 20px;
+        }
+        #posts .post_sharing>ul>li:first-child {
+          text-align:right;
+        }
+        #posts .post_sharing>ul>li:last-child {
+          border: 0;
+          text-align:left;
+          padding-top: 7px;
+        }
 
-#posts .post_sharing>ul>li>a {
-  display: block;
-  padding: 0 0 0 55px;
-  font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
-  text-transform: uppercase;
-}
-#posts .post_sharing ul li.post_sharing_twitter {
-  width: 95px;
-  padding-left: 14px;
-  padding-right: 0px;
-}
-#posts .post_sharing ul li.post_sharing_linkedin {
-  padding-left: 5px;
-}
-#posts .post_sharing ul li.post_sharing_email {
-  background-image: url(http://static.tumblr.com/rjuukmo/5rHmj5par/subscribe_email.png);
-  background-repeat: no-repeat;
-  background-position: 15px 17px;
-}
+        #posts .post_sharing>ul>li>a {
+          display: block;
+          padding: 0 0 0 55px;
+          font: normal normal 15px/50px 'MercuryMedium','Helvetica Neue','Helvetica','Arial','sans-serif';
+          text-transform: uppercase;
+        }
+        #posts .post_sharing ul li.post_sharing_twitter {
+          width: 95px;
+          padding-left: 14px;
+          padding-right: 0px;
+        }
+        #posts .post_sharing ul li.post_sharing_linkedin {
+          padding-left: 5px;
+        }
+        #posts .post_sharing ul li.post_sharing_email {
+          background-image: url(http://static.tumblr.com/rjuukmo/5rHmj5par/subscribe_email.png);
+          background-repeat: no-repeat;
+          background-position: 15px 17px;
+        }
 
         /* Commnets */
 
@@ -1531,7 +1530,22 @@ ol#posts .post_content .post_meta {
     </style>
 
     <!--[if lte IE 8]>
-        
+      <style type="text/css">
+
+        #blog_sidebar .blog_sidebar_connect_social {
+          padding: 10px 20px 20px 25px;
+        }
+          #blog_sidebar .blog_sidebar_connect_social>li {
+            margin-right:7px;
+          }
+        #posts .post_sharing>ul>li {
+          width: 110px;
+        }
+          #posts .post_sharing ul li.post_sharing_email {
+            border-right:none;
+            padding-top:7px;
+          }
+      </style>
     <![endif]-->
 
 
@@ -1545,8 +1559,6 @@ ol#posts .post_content .post_meta {
     </script>
 
     <script type='text/javascript' src='http://blog.kera.io/api/read/json'></script>
-
-
 
   </head>
 
