@@ -45,7 +45,7 @@
           pos = marquee.offset();
 
           $(window).scroll(function(){
-            if($(this).scrollTop() > pos.top+marquee.height() && marquee.hasClass('default')){
+            if($(this).scrollTop() > pos.top() && marquee.hasClass('default')){
               marquee.fadeOut(1, function(){
                 $(this).removeClass('default').addClass('fixed').fadeIn(1);
                 $('.marquee_close').show();
