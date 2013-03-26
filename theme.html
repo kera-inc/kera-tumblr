@@ -2319,9 +2319,9 @@
     </script>
 
     <script>
-      mixpanel.register_once({ 'Campaign Type': 'SEO', 'Campaign Name': 'Blog',
-      'Blog Post Path': window.location.pathname
-      });
+      mixpanel.register_once({ 'utm_medium': 'SEO', 'utm_source': 'Blog',
+      'Blog Post Path': window.location.pathname  
+      }); 
 
       mixpanel.track('Marketing Page View');
     </script>
