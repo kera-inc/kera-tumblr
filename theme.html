@@ -2323,7 +2323,10 @@
       'Blog Post Path': window.location.pathname  
       }); 
 
-      mixpanel.track('Marketing Page View');
+      mixpanel.track('Marketing Page View', {
+        page: 'Blog',
+        'Blog Post Path': window.location.pathname
+      });
     </script>
 
   </body>
